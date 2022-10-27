@@ -4,5 +4,5 @@ import Nav from './component/Navbar/Navbar'
 
 
 
-// ReactDOM.render(<App />, document.getElementById('root'))
-ReactDOM.render(<Nav />, document.getElementById('root'))
+ReactDOM.render(<App />, document.getElementById('root'))
+// ReactDOM.render(<Nav />, document.getElementById('root'))
