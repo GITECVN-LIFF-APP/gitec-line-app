@@ -1,14 +1,15 @@
-import * as React from 'react'
-import Box from '@mui/material/Box'
-import BottomNavigation from '@mui/material/BottomNavigation'
-import BottomNavigationAction from '@mui/material/BottomNavigationAction'
+// lib
+import { useState } from 'react'
+import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material'
+
+// icons
 import HomeIcon from '@mui/icons-material/Home'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
 import PersonIcon from '@mui/icons-material/Person'
 
-export default function Navbar() {
-  const [value, setValue] = React.useState(0)
+const Navbar = () => {
+  const [value, setValue] = useState(0)
 
   return (
     <Box sx={{ width: 500 }}>
@@ -28,3 +29,5 @@ export default function Navbar() {
     </Box>
   )
 }
+
+export default Navbar
