@@ -3,5 +3,6 @@ export enum VARIANTS {
     SUCCESS = 'success',
     DANGER = 'danger',
     MAIN = 'main',
+    OUTLINE = 'outline'
   }
   

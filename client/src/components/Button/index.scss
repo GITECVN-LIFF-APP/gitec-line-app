@@ -1,10 +1,20 @@
 .btn-main {
-    color: #fff;
-    background-color: #eb6115;
-}
+  color: #fff;
+  background-color: #eb6115;
 
-.btn-main:hover {
+  &:hover {
     background-color: #fff;
     color: #eb6115;
     border-color: #eb6115;
+  }
+}
+
+.btn-outline {
+  background-color: #fff;
+  color: #eb6115;
+  border-color: #eb6115;
+  &:hover {
+    color: #fff;
+    background-color: #eb6115;
+  }
 }
