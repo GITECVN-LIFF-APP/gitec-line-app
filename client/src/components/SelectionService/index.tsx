@@ -1,0 +1,72 @@
+// Components
+import Navbar from '@components/Navbar'
+import Header from '@components/Header'
+
+// Lib
+import './index.css'
+import { Box } from '@mui/material'
+
+// Image
+import changeoil from '../../../public/image/1.png'
+import carwash from '../../../public/image/2.png'
+import tireexchange from '../../../public/image/3.png'
+import keepercoding from '../../../public/image/4.png'
+import vehicleinspection from '../../../public/image/5.png'
+import kerosene from '../../../public/image/6.png'
+
+const Selection = () => {
+  return (
+    // <div>
+    //   <div>
+    //     <a className='text'>オイル交換予約</a>{' '}
+    //   </div>
+    //   <img className='img' src={changeoil} />{' '}
+    // </div>
+    <>
+      <Header />
+      <>
+        <Box sx={{ width: '100%' }}>
+          <h2>各種予約</h2>
+          <div className='img'>
+            <div className='text'>
+              <a className='label'>オイル交換予約</a>
+            </div>
+            <img className='icon' src={changeoil} />
+          </div>
+          <div className='img'>
+            <div className='text'>
+              <a className='label'>洗車予約</a>
+            </div>
+            <img className='icon' src={carwash} />
+          </div>
+          <div className='img'>
+            <div className='text'>
+              <a className='label'>タイヤ交換予約</a>
+            </div>
+            <img className='icon' src={tireexchange} />
+          </div>
+          <div className='img'>
+            <div className='text'>
+              <a className='label'>Keeperコーディング予約</a>
+            </div>
+            <img className='icon' src={keepercoding} />
+          </div>
+          <div className='img'>
+            <div className='text'>
+              <a className='label'>車検予約</a>
+            </div>
+            <img className='icon' src={vehicleinspection} />
+          </div>
+          <div className='img'>
+            <div className='text'>
+              <a className='label'>灯油予約</a>
+            </div>
+            <img className='icon' src={kerosene} />
+          </div>
+        </Box>
+      </>
+      <Navbar />
+    </>
+  )
+}
+export default Selection

@@ -1,8 +1,10 @@
 // styles
+
+import Selection from '@components/SelectionService'
 import './App.css'
 
 function App() {
-  return <h2>Line mini app</h2>
+  return <Selection />
 }
 
 export default App

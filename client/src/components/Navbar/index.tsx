@@ -6,8 +6,6 @@ import { css } from 'styled-components'
 import { borders } from '@mui/system'
 import './index.css'
 
-
-
 const commonStyles = {
   bgcolor: '#EB6115',
   border: '1px solid #EB6115',
@@ -20,15 +18,14 @@ const Navbar = () => {
   const [value, setValue] = useState(0)
 
   return (
-    
-      <Box sx={{ marginTop: '100px', width: 430, height: 61 }}>
+    <Box className='bottomnav' sx={{ width: '100%', height: 61, position: 'relative' }}>
+      <Box sx={{ width: '100%', height: 61, position: 'absolute', bottom: 0 }}>
         <BottomNavigation
           showLabels
           // value={value}
           // onChange={(event, newValue) => {
           //   setSelected(newValue)
           // }}
-          
         >
           <BottomNavigationAction
             label='ホーム'
@@ -114,8 +111,7 @@ const Navbar = () => {
               </svg>
             }
           />
-          
-          <BottomNavigationAction            
+          <BottomNavigationAction
             label='LINEへ戻る'
             icon={
               <svg
@@ -133,11 +129,10 @@ const Navbar = () => {
                 />
               </svg>
             }
-          >            
-          </BottomNavigationAction>          
+          ></BottomNavigationAction>
         </BottomNavigation>
       </Box>
-    
+    </Box>
   )
 }
 
