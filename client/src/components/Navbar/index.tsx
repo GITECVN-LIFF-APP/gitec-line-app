@@ -1,5 +1,5 @@
-// Lib
 
+// Lib
 import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material'
 import Paper from '@mui/material/Paper'
 import useScrollTrigger from '@mui/material/useScrollTrigger'
