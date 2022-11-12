@@ -8,4 +8,4 @@ export default {
   component: Header
 }
 
-export const NavbarDefault: Story<Args> = (args) => <Header {...args} />
+export const HeaderDefault: Story<Args> = (args) => <Header {...args} />
