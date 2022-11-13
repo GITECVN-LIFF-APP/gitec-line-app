@@ -31,7 +31,7 @@ This document provides the requirement, assumption, and estimation for reading t
 - [React Router 6](https://reactrouter.com/en/v6.3.0/getting-started/overview) - React Router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL.
 - [Nodejs](https://nodejs.org/en/)
 - [MongoDB](https://www.mongodb.com/)
-- [Bootstrap](https://getbootstrap.com/)\
+- [Bootstrap](https://getbootstrap.com/)
 - [ExpressJs](https://expressjs.com/)
 - [Liff](https://developers.line.biz/en/docs/liff/overview/)
 
@@ -73,18 +73,22 @@ https://drive.google.com/drive/folders/1iyHFlQsiE8_p7N7lIjW4grC7vR9QMWpj
 
 # Getting Started
 
-1. git clone https://github.com/GITECVN-LIFF-APP/gitec-line-app.git
+1. Install [Git](https://git-scm.com/downloads)
 
-2. git checkout develop
+2. Install [NodeJS](https://nodejs.org/en/download/)
 
-3. cd gitec-line-app/client
+3. git clone https://github.com/GITECVN-LIFF-APP/gitec-line-app.git
 
-4. yarn install
+4. git checkout develop
 
-5. run app: yarn start
+5. cd gitec-line-app/client
 
-6. open on web: http://localhost:3000
+6. yarn install
 
-7. run storybook: yarn storybook
+7. run app: yarn start
 
-8. open on web: http://localhost:6006/
+8. open on web: http://localhost:3000
+
+9.  run storybook: yarn storybook
+
+10. open on web: http://localhost:6006/

@@ -1,11 +1,13 @@
 
 // Lib
+import React from 'react'
 import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material'
 import Paper from '@mui/material/Paper'
 import useScrollTrigger from '@mui/material/useScrollTrigger'
 import Slide from '@mui/material/Slide'
 import './index.css'
-import './helpers.js'
+
+
 
 const commonStyles = {
   bgcolor: '#EB6115',
