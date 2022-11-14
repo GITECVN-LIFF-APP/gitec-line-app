@@ -4,7 +4,7 @@ import Header from '@components/Header'
 
 // Lib
 import './index.css'
-import { Box } from '@mui/material'
+
 
 // Image
 
