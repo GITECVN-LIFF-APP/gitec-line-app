@@ -85,7 +85,7 @@ https://drive.google.com/drive/folders/1iyHFlQsiE8_p7N7lIjW4grC7vR9QMWpj
 
 6. yarn install
 
-7. run app: yarn start
+7. run app: yarn dev
 
 8. open on web: http://localhost:3000
 
