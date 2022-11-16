@@ -1,10 +1,15 @@
+import { Route, Routes } from 'react-router-dom'
 import { useState } from 'react'
 import './App.css'
+import Home from '@pages/home'
+import Header from '@components/Header'
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return <h2>Line Mini App</h2>
+  return (
+    <Routes>
+      <Route path='/' element={<Home />} />
+    </Routes>
+  )
 }
 
 export default App

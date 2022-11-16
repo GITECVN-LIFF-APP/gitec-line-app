@@ -1,27 +1,15 @@
+// Lib
+import { Box } from '@mui/material'
+
 // Components
 import Navbar from '@components/Navbar'
 import Header from '@components/Header'
 
-// Lib
-import './index.css'
-import { Box } from '@mui/material'
-
 // Image
-import changeoil from '../../../public/image/1.png'
-import carwash from '../../../public/image/2.png'
-import tireexchange from '../../../public/image/3.png'
-import keepercoding from '../../../public/image/4.png'
-import vehicleinspection from '../../../public/image/5.png'
-import kerosene from '../../../public/image/6.png'
+import { oilChange, washCar, kerosene, pika, checkCar, loop } from '@assets'
 
 const Selection = () => {
   return (
-    // <div>
-    //   <div>
-    //     <a className='text'>オイル交換予約</a>{' '}
-    //   </div>
-    //   <img className='img' src={changeoil} />{' '}
-    // </div>
     <>
       <Header />
       <>
@@ -31,31 +19,31 @@ const Selection = () => {
             <div className='text'>
               <a className='label'>オイル交換予約</a>
             </div>
-            <img className='icon' src={changeoil} />
+            <img className='icon' src={oilChange} />
           </div>
           <div className='img'>
             <div className='text'>
               <a className='label'>洗車予約</a>
             </div>
-            <img className='icon' src={carwash} />
+            <img className='icon' src={washCar} />
           </div>
           <div className='img'>
             <div className='text'>
               <a className='label'>タイヤ交換予約</a>
             </div>
-            <img className='icon' src={tireexchange} />
+            <img className='icon' src={loop} />
           </div>
           <div className='img'>
             <div className='text'>
               <a className='label'>Keeperコーディング予約</a>
             </div>
-            <img className='icon' src={keepercoding} />
+            <img className='icon' src={pika} />
           </div>
           <div className='img'>
             <div className='text'>
               <a className='label'>車検予約</a>
             </div>
-            <img className='icon' src={vehicleinspection} />
+            <img className='icon' src={checkCar} />
           </div>
           <div className='img'>
             <div className='text'>

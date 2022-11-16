@@ -1,14 +1,15 @@
+// Lib
+// import './index.css'
+import { user } from '@assets'
+import { Link } from 'react-router-dom'
+
 // Components
 import Navbar from '@components/Navbar'
 import Header from '@components/Header'
 
-// Lib
-import './index.css'
-
 // Image
-import user from '../../../public/image/user.png'
 
-const Map = () => {
+const Home = () => {
   return (
     <>
       <Header />
@@ -29,4 +30,4 @@ const Map = () => {
     </>
   )
 }
-export default Map
+export default Home
