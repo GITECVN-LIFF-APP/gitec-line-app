@@ -11,7 +11,7 @@
 @import url('../components/CarModal/style.css');
 @import url('../components/SelectionService/index.css');
 @import url('../components/Navbar/index.css');
-@import url('../components/Header/index.css');
+
 
 /* Pages */
 @import url('../pages/home.css');

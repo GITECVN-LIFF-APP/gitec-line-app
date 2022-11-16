@@ -6,7 +6,7 @@ import useScrollTrigger from '@mui/material/useScrollTrigger'
 import Slide from '@mui/material/Slide'
 import { calendar, homeIcon, nearBy, person, lineIcon } from '@assets'
 import { Link } from 'react-router-dom'
-import './index.css'
+
 
 const commonStyles = {
   bgcolor: '#EB6115',
@@ -17,10 +17,7 @@ const commonStyles = {
 }
 
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
+  
   window?: () => Window
   children: React.ReactElement
 }
@@ -43,15 +40,17 @@ export default function Navbar(props: Props) {
   return (
     <HideOnScroll {...props}>
       <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
-        <Box className='bottomnav' sx={{ width: '100%', height: 61, position: 'relative' }}>
-          <Box sx={{ width: '100%', height: 61, position: 'absolute', bottom: 0 }}>
+        <Box className='bottomnav' sx={{ width: '100%', position: 'relative' }}>
+          <Box sx={{ width: '100%', position: 'absolute', bottom: 0 }}>
             <BottomNavigation showLabels>
-              <BottomNavigationAction label='ホーム' icon={<img src={homeIcon} />} />
-
+              {/* <Link to="/"> */}
+              <BottomNavigationAction label='ホーム' icon={<img src={homeIcon} />} />                         
+              {/* </Link> */}
               <BottomNavigationAction
                 label='近くの店舗'
                 icon={<img src={nearBy} />}
               />
+              {/* <Link to="/service"> */}
               <Box sx={{ ...commonStyles, borderRadius: '50%' }}>
                 <BottomNavigationAction
                   style={{ marginTop: '15px', marginLeft: '3px', marginBottom: '5px' }}
@@ -59,6 +58,7 @@ export default function Navbar(props: Props) {
                 />
                 <label style={{ color: 'white', marginLeft: '11px'}}>予約する</label>
               </Box>
+              {/* </Link> */}
               <BottomNavigationAction
                 label='マイベージ'
                 icon={<img src={person} />}

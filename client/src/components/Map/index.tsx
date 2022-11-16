@@ -16,7 +16,7 @@ const Map = () => {
         <iframe
           width='450'
           height='250'
-          src='https://www.google.com/maps/embed/v1/MAP_MODE?key=AIzaSyAm-Y5YuYRhacF59tC76_40znYzJRN80Cc&PARAMETERS'
+          src='https://maps.google.com/maps/api/js?key=AIzaSyBazijMOj67rUPPtVybwi2Nbo90tx7vwZ'
         ></iframe>
       </>
       <Navbar />

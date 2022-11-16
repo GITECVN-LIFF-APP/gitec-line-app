@@ -1,11 +1,11 @@
 // Lib
-// import './index.css'
 import { user } from '@assets'
 import { Link } from 'react-router-dom'
-
+import { Box } from '@mui/material'
 // Components
 import Navbar from '@components/Navbar'
 import Header from '@components/Header'
+
 
 // Image
 
@@ -14,6 +14,7 @@ const Home = () => {
     <>
       <Header />
       <>
+      <Box className='homepagecard'>
         <div className='content'>
           <div className='card'>
             <div className='firstinfo'>
@@ -25,8 +26,9 @@ const Home = () => {
             </div>
           </div>
         </div>
+        </Box>
       </>
-      <Navbar />
+      <Navbar children={undefined} />
     </>
   )
 }

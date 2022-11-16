@@ -53,7 +53,7 @@ const Selection = () => {
           </div>
         </Box>
       </>
-      <Navbar />
+      <Navbar children={undefined} />
     </>
   )
 }
