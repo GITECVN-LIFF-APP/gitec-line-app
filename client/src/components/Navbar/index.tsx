@@ -7,7 +7,6 @@ import Slide from '@mui/material/Slide'
 import { calendar, homeIcon, nearBy, person, lineIcon } from '@assets'
 import { Link } from 'react-router-dom'
 
-
 const commonStyles = {
   bgcolor: '#EB6115',
   border: '1px solid #EB6115',
@@ -17,7 +16,6 @@ const commonStyles = {
 }
 
 interface Props {
-  
   window?: () => Window
   children: React.ReactElement
 }
@@ -43,30 +41,30 @@ export default function Navbar(props: Props) {
         <Box className='bottomnav' sx={{ width: '100%', position: 'relative' }}>
           <Box sx={{ width: '100%', position: 'absolute', bottom: 0 }}>
             <BottomNavigation showLabels>
-              {/* <Link to="/"> */}
-              <BottomNavigationAction label='ホーム' icon={<img src={homeIcon} />} />                         
-              {/* </Link> */}
-              <BottomNavigationAction
-                label='近くの店舗'
-                icon={<img src={nearBy} />}
-              />
-              {/* <Link to="/service"> */}
-              <Box sx={{ ...commonStyles, borderRadius: '50%' }}>
-                <BottomNavigationAction
-                  style={{ marginTop: '15px', marginLeft: '3px', marginBottom: '5px' }}
-                  icon={<img src={calendar} />}
-                />
-                <label style={{ color: 'white', marginLeft: '11px'}}>予約する</label>
-              </Box>
-              {/* </Link> */}
-              <BottomNavigationAction
-                label='マイベージ'
-                icon={<img src={person} />}
-              />
+              <Link to='/'>
+                <BottomNavigationAction label='ホーム' icon={<img src={homeIcon} />} />
+              </Link>
+              <Link to='/nearby'>
+                <BottomNavigationAction label='近くの店舗' icon={<img src={nearBy} />} />
+              </Link>
+              <Link to='/service'>
+                <Box sx={{ ...commonStyles, borderRadius: '50%' }}>
+                  <BottomNavigationAction
+                    style={{ marginTop: '15px', marginLeft: '3px', marginBottom: '5px' }}
+                    icon={<img src={calendar} />}
+                  />
+                  <label style={{ color: 'white', marginLeft: '11px' }}>予約する</label>
+                </Box>
+              </Link>
+              <Link to='/mypage'>
+              <BottomNavigationAction label='マイベージ' icon={<img src={person} />} />
+              </Link>
+              <Link to='/'>
               <BottomNavigationAction
                 label='LINEへ戻る'
                 icon={<img src={lineIcon} />}
               ></BottomNavigationAction>
+              </Link>
             </BottomNavigation>
           </Box>
         </Box>

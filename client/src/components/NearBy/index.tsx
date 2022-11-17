@@ -5,22 +5,18 @@ import Header from '@components/Header'
 // Lib
 import './index.css'
 
-
 // Image
 
-const Map = () => {
+
+const NearBy = () => {
   return (
     <>
       <Header />
       <>
-        <iframe
-          width='450'
-          height='250'
-          src='https://maps.google.com/maps/api/js?key=AIzaSyBazijMOj67rUPPtVybwi2Nbo90tx7vwZ'
-        ></iframe>
+        <h1>Nearby</h1>
       </>
       <Navbar />
     </>
   )
 }
-export default Map
+export default NearBy
