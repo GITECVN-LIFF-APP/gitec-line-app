@@ -1,18 +1,23 @@
 // Lib
-
 import { Box } from '@mui/material'
-import './index.css'
-
+import styled from 'styled-components'
 //Image
-import logo from '../../../public/image/logo.png'
+import { logo } from '@assets'
+
+const Image = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: #f4f4f4;
+`
 
 const Header = () => {
   return (
-    <Box sx={{ width: '100%', height: 50 }}>
-      <div className='logo'>
-        <center>
-          <img className='imglogo' src={logo} />
-        </center>
+    <Box className='box' sx={{ width: '100%', height: 50 }}>
+      <div className='logoapp'>
+        <Image>
+          <img src={logo} />
+        </Image>
       </div>
     </Box>
   )
