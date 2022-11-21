@@ -1,18 +1,16 @@
+// Lib
 import { Route, Routes } from 'react-router-dom'
-import { useState } from 'react'
-import './App.css'
-import Home from '@pages/home'
-import Selection from '@components/SelectionService'
-import Map from '@components/NearBy'
-import MyPage from '@components/MyPage'
+
+// Styles
+import './styles/index.css'
+
+// Pages
+import RegisTerMember from '@pages/registerMember'
 
 function App() {
   return (
     <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/service' element={<Selection />} />      
-      <Route path='/nearby' element={<Map />} /> 
-      <Route path='/mypage' element={<MyPage />} /> 
+      <Route path='/register-member' element={<RegisTerMember />} />
     </Routes>
   )
 }

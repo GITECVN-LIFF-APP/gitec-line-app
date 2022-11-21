@@ -1,15 +1,11 @@
 // Lib
 import { Box } from '@mui/material'
-import styled from 'styled-components'
-//Image
+
+// Assets
 import { logo } from '@assets'
 
-const Image = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  background: #f4f4f4;
-`
+// Styles
+import { Image } from './styles'
 
 const Header = () => {
   return (
@@ -22,4 +18,5 @@ const Header = () => {
     </Box>
   )
 }
+
 export default Header

@@ -1,17 +1,17 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { TextArea } from '@components';
+// Lib
+import { ComponentStory, ComponentMeta } from '@storybook/react'
+
+// Components
+import TextArea from '@components/TextArea'
 
 export default {
-  title: 'GITECH/TextArea',
+  title: 'TextArea',
   component: TextArea,
-} as ComponentMeta<typeof TextArea>;
+} as ComponentMeta<typeof TextArea>
 
-const Template: ComponentStory<typeof TextArea> = (args) => (
-  <TextArea {...args} />
-);
+const Template: ComponentStory<typeof TextArea> = (args) => <TextArea {...args} />
 
-export const Sample = Template.bind({});
+export const Sample = Template.bind({})
 Sample.args = {
   label: 'Agenda',
-};
+}

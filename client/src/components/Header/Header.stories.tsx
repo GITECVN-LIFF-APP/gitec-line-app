@@ -1,11 +1,12 @@
+// Lib
 import { Args, Story } from '@storybook/react'
 
 // components
-import Header from './index'
+import Header from '@components/Header'
 
 export default {
-  title: 'Components/Header',
-  component: Header
+  title: 'Header',
+  component: Header,
 }
 
 export const HeaderDefault: Story<Args> = (args) => <Header {...args} />

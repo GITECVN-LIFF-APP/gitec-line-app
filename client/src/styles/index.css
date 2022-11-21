@@ -9,9 +9,10 @@
 
 /* Components style */
 @import url('../components/CarModal/style.css');
-@import url('../components/SelectionService/index.css');
-@import url('../components/Navbar/index.css');
+@import url('../components/SelectionService/style.css');
+@import url('../components/Navbar/style.css');
+@import url('../components/Button/style.css');
+@import url('../components/NearBy/style.css');
+@import url('../components/TextArea/style.css');
 
-
-/* Pages */
-@import url('../pages/home.css');
+/* COMMON STYLE */

@@ -3,5 +3,5 @@
 }
 
 .input-group__message {
-  color: #dc4c4c;
+  color: var(--english-vermillion);
 }

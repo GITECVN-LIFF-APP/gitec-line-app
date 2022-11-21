@@ -1,9 +1,12 @@
-import { Story } from '@storybook/react';
-import CarModalSelection from '.';
+// Lib
+import { Story } from '@storybook/react'
+
+// Components
+import CarModal from '@components/CarModal'
 
 export default {
-  title: 'CarModalSelection',
-  component: CarModalSelection,
-};
+  title: 'CarModal',
+  component: CarModal,
+}
 
-export const CarModalSelectionSample: Story = () => <CarModalSelection />;
+export const CarModalSample: Story = () => <CarModal />

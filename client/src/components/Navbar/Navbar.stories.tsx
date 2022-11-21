@@ -1,11 +1,17 @@
+// Lib
 import { Args, Story } from '@storybook/react'
+import { BrowserRouter } from 'react-router-dom'
 
 // components
 import Navbar from './index'
 
 export default {
-  title: 'Components/Navbar',
-  component: Navbar
+  title: 'Navbar',
+  component: Navbar,
 }
 
-export const NavbarDefault: Story<Args> = (args) => <Navbar {...args} />
+export const NavbarDefault: Story<Args> = (args) => (
+  <BrowserRouter>
+    <Navbar children={undefined} {...args} />
+  </BrowserRouter>
+)

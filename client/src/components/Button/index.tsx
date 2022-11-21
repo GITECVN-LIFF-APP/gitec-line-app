@@ -1,19 +1,24 @@
-import { stylesButton } from '@constants';
-import { SIZES, VARIANTS } from '@enums';
-import React, { ButtonHTMLAttributes, ReactNode } from 'react';
+// Lib
+import { ButtonHTMLAttributes, ReactNode } from 'react'
+
+// Constants
+import { stylesButton } from '@constants'
+
+// Enum
+import { SIZES, VARIANTS } from '@enums'
 
 export type ButtonProps = {
-  onClick?: () => void;
-  children: ReactNode;
-  variant?: VARIANTS;
-  size?: SIZES;
-  className?: string;
-  testId?: string;
-  typeButton?: ButtonHTMLAttributes<HTMLButtonElement>['type'];
-  disabled?: boolean;
-};
+  onClick?: () => void
+  children: ReactNode
+  variant?: VARIANTS
+  size?: SIZES
+  className?: string
+  testId?: string
+  typeButton?: ButtonHTMLAttributes<HTMLButtonElement>['type']
+  disabled?: boolean
+}
 
-export const Button = ({
+const Button = ({
   variant = VARIANTS.PRIMARY,
   onClick,
   children,
@@ -33,5 +38,7 @@ export const Button = ({
     >
       {children}
     </button>
-  );
-};
+  )
+}
+
+export default Button

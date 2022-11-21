@@ -1,18 +1,19 @@
-import React, { InputHTMLAttributes, RefObject } from 'react';
+// lib
+import React, { InputHTMLAttributes, RefObject } from 'react'
 
 export type InputProps = {
-  id: string;
-  name: string;
-  label: string;
-  type: InputHTMLAttributes<HTMLElement>['type'];
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  placeholder?: string;
-  errorMessage?: string;
-  inputRef?: RefObject<HTMLInputElement>;
-  defaultValue: string;
-};
+  id: string
+  name: string
+  label: string
+  type: InputHTMLAttributes<HTMLElement>['type']
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
+  placeholder?: string
+  errorMessage?: string
+  inputRef?: RefObject<HTMLInputElement>
+  defaultValue: string
+}
 
-export const Input = ({
+const Input = ({
   id,
   name,
   label,
@@ -24,9 +25,9 @@ export const Input = ({
   defaultValue,
 }: InputProps): JSX.Element => {
   return (
-    <div className="d-flex flex-column mt-3">
-      <div className="flex-nowrap">
-        <label htmlFor={id} className="mb-2 fw-semibold">
+    <div className='d-flex flex-column mt-3'>
+      <div className='flex-nowrap'>
+        <label htmlFor={id} className='mb-2 fw-semibold'>
           {label}
         </label>
         <input
@@ -34,20 +35,19 @@ export const Input = ({
           ref={inputRef}
           id={id}
           type={type}
-          className="form-control rounded-pill"
+          className='form-control rounded-pill'
           name={name}
           onChange={onChange}
           placeholder={placeholder}
         />
       </div>
       {errorMessage && (
-        <small
-          data-testid={`${name}-error`}
-          className="badge bg-danger text-wrap fs-6"
-        >
+        <small data-testid={`${name}-error`} className='badge bg-danger text-wrap fs-6'>
           {errorMessage}
         </small>
       )}
     </div>
-  );
-};
+  )
+}
+
+export default Input

@@ -1,12 +1,17 @@
+// Lib
 import { Args, Story } from '@storybook/react'
-import NearBy from './index'
+import { BrowserRouter } from 'react-router-dom'
 
 // components
-import Nearby from './index'
+import NearBy from '@components/NearBy'
 
 export default {
-  title: 'Components/NearBy',
-  component: NearBy
+  title: 'NearBy',
+  component: NearBy,
 }
 
-export const MapDefault: Story<Args> = (args) => <NearBy {...args} />
+export const MapDefault: Story<Args> = (args) => (
+  <BrowserRouter>
+    <NearBy {...args} />
+  </BrowserRouter>
+)

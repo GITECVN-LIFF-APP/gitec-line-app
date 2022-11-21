@@ -1,0 +1,21 @@
+.btn-main {
+  color: var(--white);
+  background-color: var(--halloween-orange);
+}
+
+.btn-main:hover {
+  background-color: var(--white);
+  color: var(--halloween-orange);
+  border-color: var(--halloween-orange);
+}
+
+.btn-outline {
+  background-color: var(--white);
+  color: var(--halloween-orange);
+  border-color: var(--halloween-orange);
+}
+
+.btn-outline:hover {
+  color: var(--white);
+  background-color: var(--halloween-orange);
+}
