@@ -1,5 +1,5 @@
 // Lib
-import styled from "styled-components"
+import styled from 'styled-components'
 
 export const Image = styled.div`
   display: flex;
