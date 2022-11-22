@@ -5,13 +5,12 @@ import { Route, Routes } from 'react-router-dom'
 import './styles/index.css'
 
 // Pages
-import RegisTerMember from '@pages/registerMember'
+
+
 
 function App() {
   return (
-    <Routes>
-      <Route path='/register-member' element={<RegisTerMember />} />
-    </Routes>
+    <h1>Hello</h1>
   )
 }
 
