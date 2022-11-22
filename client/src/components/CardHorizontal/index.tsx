@@ -7,7 +7,7 @@ import { user } from '@assets'
 const CardHorizontal = () => {
   return (
     <>
-      <Box className='homepagecard'>
+      <div className='homepagecard'>
         <div className='content'>
           <div className='card'>
             <div className='firstinfo'>
@@ -19,7 +19,7 @@ const CardHorizontal = () => {
             </div>
           </div>
         </div>
-      </Box>
+      </div>
     </>
   )
 }
