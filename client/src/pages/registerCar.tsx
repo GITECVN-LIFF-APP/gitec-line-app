@@ -1,15 +1,16 @@
+// Components
+import CarRegister from '@components/CarRegister'
 import Header from '@components/Header'
-import MemberRegister from '@components/MemberRegister'
 
-const RegisTerMember = () => {
+const RegisTerCar = () => {
   return (
     <>
       <Header />
       <div className='container mt-3 mb-3'>
-        <MemberRegister />
+        <CarRegister />
       </div>
     </>
   )
 }
 
-export default RegisTerMember
+export default RegisTerCar
