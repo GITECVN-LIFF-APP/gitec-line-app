@@ -19,7 +19,7 @@ const Input = ({
   label,
   type,
   onChange,
-  placeholder = 'Please enter something.',
+  placeholder,
   errorMessage,
   inputRef,
   defaultValue,
