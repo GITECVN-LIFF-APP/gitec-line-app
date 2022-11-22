@@ -1,6 +1,8 @@
 // Lib
-import { user } from '@assets'
 import { Box } from '@mui/material'
+
+// Assets
+import { user } from '@assets'
 
 const CardHorizontal = () => {
   return (

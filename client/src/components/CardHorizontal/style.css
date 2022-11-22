@@ -1,23 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
-
-@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap';
-
 .homepagecard,
 .badgescard,
 .firstinfo {
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
 
 .homepagecard {
   font-family: 'Noto Sans JP', sans-serif;
   width: 100%;
-  min-height: 100%;  
+  min-height: 100%;
   overflow: hidden;
-  
 }
+
 *,
 *:before,
 *:after {
@@ -32,7 +27,7 @@
   background-color: white;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
   position: relative;
-  overflow: hidden;  
+  overflow: hidden;
 }
 
 .firstinfo {
@@ -40,11 +35,13 @@
   z-index: 2;
   position: relative;
 }
+
 .firstinfo img {
   border-radius: 50%;
   width: 79px;
   height: 79px;
 }
+
 .firstinfo .profileinfo {
   padding: 0px 20px;
 }

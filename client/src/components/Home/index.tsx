@@ -6,9 +6,6 @@ import Navbar from '@components/Navbar'
 import Header from '@components/Header'
 import CardHorizontal from '@components/CardHorizontal'
 
-
-// Image
-
 const Home = () => {
   return (
     <>
