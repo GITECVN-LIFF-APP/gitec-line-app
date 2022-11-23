@@ -1,9 +1,10 @@
 // Lib
 import { Args, Story } from '@storybook/react'
+import { BrowserRouter } from 'react-router-dom'
 
 // Components
 import Home from '@components/Home'
-import { BrowserRouter } from 'react-router-dom'
+
 
 export default {
   title: 'Home',

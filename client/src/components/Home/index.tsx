@@ -1,6 +1,7 @@
 // Lib
 import { user } from '@assets'
 import { Box } from '@mui/material'
+
 // Components
 import Navbar from '@components/Navbar'
 import Header from '@components/Header'
