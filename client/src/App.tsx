@@ -9,6 +9,7 @@ import RegisTerMember from '@pages/registerMember'
 import RegisTerCar from '@pages/registerCar'
 import ConfirmInformation from '@pages/confirmInformation'
 import Service from '@pages/service'
+import ReservationSuccess from '@pages/reservationSuccess'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path='/register-car' element={<RegisTerCar />} />
       <Route path='/confirm-information' element={<ConfirmInformation />} />
       <Route path='/service' element={<Service />} />
+      <Route path='/reservation' element={<ReservationSuccess />} />
     </Routes>
   )
 }
