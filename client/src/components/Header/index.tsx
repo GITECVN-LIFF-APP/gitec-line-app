@@ -11,9 +11,9 @@ const Header = () => {
   return (
     <Box className='box' sx={{ width: '100%', height: 50 }}>
       <div className='logoapp'>
-        <Image>
+        <div className='imagelogo'>
           <img src={logo} />
-        </Image>
+        </div>
       </div>
     </Box>
   )
