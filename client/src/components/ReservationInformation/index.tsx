@@ -48,7 +48,7 @@ const ReservationInformation = () => {
         </div>
         <div className='col'>
           <Button
-            className='button-return-edit'
+            className='button-reservation'
             size={SIZES.LARGE}
             variant={VARIANTS.MAIN}
             children='編集に戻る'

@@ -20,10 +20,6 @@
   background-color: var(--halloween-orange);
 }
 
-.button-confirm{
-  width: 150px;
-}
-
-.button-return-edit{
+.button-reservation {
   width: 150px;
 }
