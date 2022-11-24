@@ -9,12 +9,12 @@ import { SIZES, VARIANTS } from '@enums'
 const ReservationInformation = () => {
   return (
     <>
-      <div className='container-member'>
+      <div>
         <h2 className='fw-bold mb-5'>オイル交換予約</h2>
         <p className='fw-bold mb-4'>予約内容確認</p>
         <CardHorizontalMember />
       </div>
-      <div className='container-car'>
+      <div className='mt-5'>
         <p className='fw-bold mb-4'>点検車種</p>
         <CardHorizontalCar />
       </div>

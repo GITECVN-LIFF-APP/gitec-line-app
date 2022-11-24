@@ -50,7 +50,7 @@ const SelectionService = () => {
           <img className='icon' src={kerosene} />
         </div>
       </Box>
-      <Navbar children='' />
+      <Navbar />
     </>
   )
 }
