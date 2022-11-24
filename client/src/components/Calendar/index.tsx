@@ -8,6 +8,7 @@ import { VARIANTS } from '@enums'
 
 // Components
 import Button from '@components/Button'
+import { Link } from 'react-router-dom'
 
 const Calendar = () => {
   return (
@@ -31,7 +32,9 @@ const Calendar = () => {
         <h6 className='fw-semibold mb-4'>ご希望の日時</h6>
         <p>10月9日（日）　16:00〜17:00</p>
       </div>
+      <Link to={'/car-modal'}>
       <Button variant={VARIANTS.MAIN} children='日にち選択へ' />
+      </Link>
     </>
   )
 }

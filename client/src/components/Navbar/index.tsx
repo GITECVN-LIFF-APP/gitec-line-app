@@ -45,11 +45,11 @@ const Navbar = ({ window, children }: NavbarProps) => {
         <Box className='bottomnav' sx={{ width: '100%', position: 'relative' }}>
           <Box sx={{ width: '100%', position: 'absolute', bottom: 0 }}>
             <BottomNavigation
-              showLabels
-              value={value}
-              onChange={(event, newValue) => {
-                setValue(newValue)
-              }}
+              // showLabels
+              // value={value}
+              // onChange={(event, newValue) => {
+              //   setValue(newValue)
+              // }}
             >
               <BottomNavigationAction
                 label='ホーム'

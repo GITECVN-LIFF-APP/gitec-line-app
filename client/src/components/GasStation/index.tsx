@@ -6,6 +6,7 @@ import { map } from '@assets'
 
 // Enums
 import { VARIANTS } from '@enums'
+import { Link } from 'react-router-dom'
 
 const GasStation = () => {
   return (
@@ -36,7 +37,9 @@ const GasStation = () => {
         <h6 className='fw-semibold mb-3'>お電話番号</h6>
         <p>0000-00-0000</p>
       </div>
-      <Button variant={VARIANTS.MAIN} children='日にち選択へ' />
+      <Link to={'/pick-date-time'}>
+        <Button variant={VARIANTS.MAIN} children='日にち選択へ' />
+      </Link>
     </>
   )
 }
