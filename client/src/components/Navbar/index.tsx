@@ -1,5 +1,5 @@
 // Lib
-import React from 'react'
+import React, { useState } from 'react'
 import { BottomNavigation, BottomNavigationAction, Box } from '@mui/material'
 import Paper from '@mui/material/Paper'
 import useScrollTrigger from '@mui/material/useScrollTrigger'
@@ -15,6 +15,8 @@ interface NavbarProps {
 }
 
 const Navbar = ({ window, children }: NavbarProps) => {
+  const [value, setValue] = useState(0)
+
   const commonStyles = {
     bgcolor: '#EB6115',
     border: '1px solid #EB6115',
@@ -42,7 +44,13 @@ const Navbar = ({ window, children }: NavbarProps) => {
       <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
         <Box className='bottomnav' sx={{ width: '100%', position: 'relative' }}>
           <Box sx={{ width: '100%', position: 'absolute', bottom: 0 }}>
-            <BottomNavigation showLabels>
+            <BottomNavigation
+              showLabels
+              value={value}
+              onChange={(event, newValue) => {
+                setValue(newValue)
+              }}
+            >
               <BottomNavigationAction
                 label='ホーム'
                 icon={<img src={homeIcon} />}
