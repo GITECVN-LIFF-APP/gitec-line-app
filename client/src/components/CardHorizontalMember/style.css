@@ -34,6 +34,7 @@
   flex-direction: row;
   z-index: 2;
   position: relative;
+  margin-top: 17px;
 }
 
 .firstinfo img {
@@ -43,9 +44,14 @@
 }
 
 .firstinfo .profileinfo {
-  padding: 0px 20px;
+  padding: 0px 40px;
 }
 
 .firstinfo .profileinfo p.bio {
-  margin-top: -10px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
+.fw-bold .mb-4 {
+  margin-top: 20px;
 }

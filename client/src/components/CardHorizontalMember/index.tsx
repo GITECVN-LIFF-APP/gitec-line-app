@@ -1,10 +1,7 @@
-// Lib
-import { Box } from '@mui/material'
-
 // Assets
 import { user } from '@assets'
 
-const CardHorizontal = () => {
+const CardHorizontalMember = () => {
   return (
     <>
       <div className='homepagecard'>
@@ -13,7 +10,7 @@ const CardHorizontal = () => {
             <div className='firstinfo'>
               <img src={user} />
               <div className='profileinfo'>
-                <h3>オーナー</h3>
+                <p className='fw-bold mb-4'>オーナー</p>
                 <p className='bio'>ジーアイテック太郎</p>
               </div>
             </div>
@@ -23,4 +20,4 @@ const CardHorizontal = () => {
     </>
   )
 }
-export default CardHorizontal
+export default CardHorizontalMember
