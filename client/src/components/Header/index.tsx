@@ -4,9 +4,6 @@ import { Box } from '@mui/material'
 // Assets
 import { logo } from '@assets'
 
-// Styles
-import { Image } from './styles'
-
 const Header = () => {
   return (
     <Box className='box' sx={{ width: '100%', height: 50 }}>

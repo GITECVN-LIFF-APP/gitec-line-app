@@ -10,6 +10,8 @@ import RegisTerCar from '@pages/registerCar'
 import ConfirmInformation from '@pages/confirmInformation'
 import Service from '@pages/service'
 import ReservationSuccess from '@pages/reservationSuccess'
+import Home from '@pages/home'
+import NearBy from '@components/NearBy'
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
       <Route path='/confirm-information' element={<ConfirmInformation />} />
       <Route path='/service' element={<Service />} />
       <Route path='/reservation' element={<ReservationSuccess />} />
+      <Route path='/' element={<Home />} />
+      <Route path='/nearby' element={<NearBy />} />
     </Routes>
   )
 }
