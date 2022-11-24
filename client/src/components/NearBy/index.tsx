@@ -9,7 +9,7 @@ const NearBy = () => {
       <>
         <h1>Nearby</h1>
       </>
-      <Navbar children={undefined} />
+      <Navbar />
     </>
   )
 }
