@@ -3,16 +3,16 @@ import { Args, Story } from '@storybook/react'
 import { BrowserRouter } from 'react-router-dom'
 
 // Components
-import Home from '@components/Home'
+import Menu from '@components/Menu'
 
 
 export default {
-  title: 'Home',
-  component: Home,
+  title: 'Menu',
+  component: Menu,
 }
 
 export const HomeDefault: Story<Args> = (args) => (
   <BrowserRouter>
-    <Home {...args} />
+    <Menu {...args} />
   </BrowserRouter>
 )

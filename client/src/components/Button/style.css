@@ -19,3 +19,7 @@
   color: var(--white);
   background-color: var(--halloween-orange);
 }
+
+.button-reservation {
+  width: 150px;
+}

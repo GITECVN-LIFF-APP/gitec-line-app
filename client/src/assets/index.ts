@@ -12,6 +12,7 @@ import homeIcon from './images/home-icon.png'
 import nearBy from './images/nearby.png'
 import person from './images/person.png'
 import lineIcon from './images/line-icon.png'
+import map from './images/map.png'
 
 
-export { car, checkCar, logo, loop, oilChange, pika, user, washCar, kerosene, calendar, homeIcon, nearBy, person, lineIcon }
+export { car, checkCar, logo, loop, oilChange, pika, user, washCar, kerosene, calendar, homeIcon, nearBy, person, lineIcon, map }

@@ -1,6 +1,5 @@
 // Lib
 import { user } from '@assets'
-import { Link } from 'react-router-dom'
 import { Box } from '@mui/material'
 
 // Components
