@@ -11,7 +11,7 @@ import { calendar, homeIcon, nearBy, person, lineIcon } from '@assets'
 
 interface NavbarProps {
   window?: () => Window
-  children: React.ReactElement
+  children?: React.ReactElement
 }
 
 const Navbar = ({ window, children }: NavbarProps) => {
@@ -34,7 +34,7 @@ const Navbar = ({ window, children }: NavbarProps) => {
 
     return (
       <Slide appear={false} direction='up' in={!trigger}>
-        {children}
+        {children as React.ReactElement}
       </Slide>
     )
   }

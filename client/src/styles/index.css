@@ -14,5 +14,9 @@
 @import url('../components/Button/style.css');
 @import url('../components/NearBy/style.css');
 @import url('../components/TextArea/style.css');
+@import url('../components/Header/styles.css');
+@import url('../components/CardHorizontalMember/style.css');
+@import url('../components/CardHorizontalCar/style.css');
+@import url('../components/ReservationInformation/style.css');
 
 /* COMMON STYLE */
