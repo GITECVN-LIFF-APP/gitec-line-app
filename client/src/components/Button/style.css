@@ -19,3 +19,11 @@
   color: var(--white);
   background-color: var(--halloween-orange);
 }
+
+.button-confirm{
+  width: 150px;
+}
+
+.button-return-edit{
+  width: 150px;
+}
