@@ -6,6 +6,7 @@ import Button from '@components/Button'
 
 // Enums
 import { VARIANTS } from '@enums'
+import { Link } from 'react-router-dom'
 
 const CarModal = () => {
   return (
@@ -22,7 +23,9 @@ const CarModal = () => {
           <h5 className='card-title fw-semibold'>ルーミー</h5>
         </div>
       </div>
-      <Button variant={VARIANTS.MAIN} children='車種情報の入力' />
+      <Link to={'/reservation-confirm'}>
+        <Button variant={VARIANTS.MAIN} children='車種情報の入力' />
+      </Link>
     </>
   )
 }

@@ -5,6 +5,7 @@ import Button from '@components/Button'
 
 // Enums
 import { SIZES, VARIANTS } from '@enums'
+import { Link } from 'react-router-dom'
 
 const ReservationInformation = () => {
   return (
@@ -39,20 +40,24 @@ const ReservationInformation = () => {
       </div>
       <div className='row mb-5'>
         <div className='col'>
-          <Button
-            className='button-reservation'
-            size={SIZES.LARGE}
-            variant={VARIANTS.MAIN}
-            children='予約する'
-          />
+          <Link to={'/reservation-success'}>
+            <Button
+              className='button-reservation'
+              size={SIZES.LARGE}
+              variant={VARIANTS.MAIN}
+              children='予約する'
+            />
+          </Link>
         </div>
         <div className='col'>
-          <Button
-            className='button-reservation'
-            size={SIZES.LARGE}
-            variant={VARIANTS.MAIN}
-            children='編集に戻る'
-          />
+          <Link to={'/service'}>
+            <Button
+              className='button-reservation'
+              size={SIZES.LARGE}
+              variant={VARIANTS.MAIN}
+              children='編集に戻る'
+            />
+          </Link>
         </div>
       </div>
     </>

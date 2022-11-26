@@ -3,6 +3,7 @@ import Button from '@components/Button'
 
 // Enums
 import { SIZES, VARIANTS } from '@enums'
+import { Link } from 'react-router-dom'
 
 const Reservation = () => {
   return (
@@ -14,7 +15,9 @@ const Reservation = () => {
         内容がお間違いない場合は、当日になりましたら、 メッセージに添付しておりますQRコードをご準備
         いただき、店舗へお越しください。
       </p>
-      <Button size={SIZES.LARGE} variant={VARIANTS.MAIN} children='ホームへ戻る' />
+      <Link to={'/'}>
+        <Button size={SIZES.LARGE} variant={VARIANTS.MAIN} children='ホームへ戻る' />
+      </Link>
     </>
   )
 }

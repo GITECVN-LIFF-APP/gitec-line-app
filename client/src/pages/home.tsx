@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      <div className='container'>
+      <div className='container mt-3 mb-3'>
         <Box className='homepagecard'>
           <div className='content'>
             <div className='card'>
