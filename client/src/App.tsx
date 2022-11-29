@@ -16,9 +16,11 @@ import ReservationSuccess from '@pages/reservationSuccess'
 import Home from '@pages/home'
 import GasStationPage from '@pages/gasStation'
 import PickDateTime from '@pages/pickDateTime'
+import Login from '@pages/login'
+
+// Components
 import CarModal from '@components/CarModal'
 import ReservationInformation from '@components/ReservationInformation'
-import Login from '@pages/login'
 
 function App() {
   return (
