@@ -16,6 +16,9 @@ import ReservationSuccess from '@pages/reservationSuccess'
 import Home from '@pages/home'
 import GasStationPage from '@pages/gasStation'
 import PickDateTime from '@pages/pickDateTime'
+import Login from '@pages/login'
+
+// Components
 import CarModal from '@components/CarModal'
 import ReservationInformation from '@components/ReservationInformation'
 
@@ -27,15 +30,14 @@ function App() {
       <Route path='/confirm-information' element={<ConfirmInformation />} />
       <Route path='/service' element={<Service />} />
       <Route path='/reservation' element={<ReservationSuccess />} />
-      <Route path='/' element={<Home />} />
+      <Route path='/' element={<Login />} />
+      <Route path='/home' element={<Home />} />
       <Route path='/nearby' element={<NearBy />} />
       <Route path='/oil-change' element={<GasStationPage />} />
       <Route path='/pick-date-time' element={<PickDateTime />} />
       <Route path='/car-modal' element={<CarModal />} />
       <Route path='/reservation-confirm' element={<ReservationInformation />} />
       <Route path='/reservation-success' element={<ReservationSuccess />} />
-
-      
     </Routes>
   )
 }

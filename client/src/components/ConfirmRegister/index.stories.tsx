@@ -9,4 +9,4 @@ export default {
   component: ConfirmRegister,
 }
 
-export const ConfirmRegisterSample: Story = () => <ConfirmRegister {...args} />
+export const ConfirmRegisterSample: Story = () => <ConfirmRegister />
