@@ -19,6 +19,7 @@
 @import url('../components/GasStation/style.css');
 @import url('../components/MyPageMember/style.css');
 @import url('../components/MyPageCar/style.css');
+@import url('../components/ReservationInformation/style.css');
 
 /* COMMON STYLE */
 .btn-login {

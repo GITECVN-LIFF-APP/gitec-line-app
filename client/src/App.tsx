@@ -41,7 +41,7 @@ function App() {
     //   <Route path='/reservation-success' element={<ReservationSuccess />} />
     //   <Route path='/mypage' element={<MyPage />} />
     // </Routes>
-    <Service />
+    <ReservationInformation />
   )
 }
 

@@ -6,8 +6,6 @@ import Button from '@components/Button'
 import { SIZES, VARIANTS } from '@enums'
 import { Link } from 'react-router-dom'
 
-// Assets
-import { user } from '@assets'
 
 const ReservationInformation = () => {
   return (
