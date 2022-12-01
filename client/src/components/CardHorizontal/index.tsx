@@ -1,11 +1,11 @@
 export type CardHorizontalProps = {
   image: string
-  textTitle: string
+  title: string
   description: string
 }
 
 
-const CardHorizontal = ({image, textTitle, description}:CardHorizontalProps) => {
+const CardHorizontal = ({image, title, description}:CardHorizontalProps) => {
   return (
     <>
       <div className='homepagecard'>
@@ -14,7 +14,7 @@ const CardHorizontal = ({image, textTitle, description}:CardHorizontalProps) => 
             <div className='firstinfo'>
               <img src={image} />
               <div className='profileinfo'>
-                <p className='fw-bold mb-4'>{textTitle}</p>
+                <p className='fw-bold mb-4'>{title}</p>
                 <p className='bio'>{description}</p>
               </div>
             </div>

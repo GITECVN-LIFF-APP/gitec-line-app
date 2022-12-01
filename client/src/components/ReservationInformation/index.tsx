@@ -17,13 +17,13 @@ const ReservationInformation = () => {
         <p className='fw-bold mb-4'>予約内容確認</p>
       </div>
       <div className='container'>
-        <CardHorizontal image={user} textTitle='オーナー' description='ジーアイテック太郎' />
+        <CardHorizontal image={user} title='オーナー' description='ジーアイテック太郎' />
       </div>
       <div className='mt-5'>
         <p className='fw-bold mb-4'>点検車種</p>
       </div>
       <div className='container'>
-        <CardHorizontal image={car} textTitle='トヨタ  ルーミー' description={''} />
+        <CardHorizontal image={car} title='トヨタ  ルーミー' description={''} />
       </div>
       <div className='mt-5'>
         <p className='fw-bold mb-5'>予約内容詳細</p>

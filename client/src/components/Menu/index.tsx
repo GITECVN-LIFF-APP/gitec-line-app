@@ -7,7 +7,7 @@ import { user } from '@assets'
 const Menu = () => {
   return (
     <>
-      <CardHorizontal image={user} textTitle='オーナー' description='ジーアイテック太郎' />
+      <CardHorizontal image={user} title='オーナー' description='ジーアイテック太郎' />
     </>
   )
 }
