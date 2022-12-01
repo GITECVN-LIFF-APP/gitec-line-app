@@ -2,7 +2,7 @@
 import { Args, Story } from '@storybook/react'
 
 // Components
-import CardHorizontalMember from '@components/CardHorizontalMember'
+import CardHorizontalMember from '@components/CardHorizontal'
 
 export default {
   title: 'CardHorizontalMember',

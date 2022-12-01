@@ -67,13 +67,7 @@ const Navbar = ({ window, children }: NavbarProps) => {
         <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
           <Box className='bottomnav' sx={{ width: '100%', position: 'relative' }}>
             <Box sx={{ width: '100%', position: 'absolute', bottom: 0 }}>
-              <BottomNavigation
-                showLabels
-                // value={value}
-                // onChange={(event, newValue) => {
-                //   setValue(newValue)
-                // }}
-              >
+              <BottomNavigation showLabels>
                 <BottomNavigationAction
                   label='ホーム'
                   icon={<img src={homeIcon} />}

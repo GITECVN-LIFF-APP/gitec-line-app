@@ -1,11 +1,13 @@
 // Components
-import CardHorizontalMember from '@components/CardHorizontalMember'
-import CardHorizontalCar from '@components/CardHorizontalCar'
+import CardHorizontal from '@components/CardHorizontal'
 import Button from '@components/Button'
 
 // Enums
 import { SIZES, VARIANTS } from '@enums'
 import { Link } from 'react-router-dom'
+
+// Assets
+import { user } from '@assets'
 
 const ReservationInformation = () => {
   return (
@@ -13,11 +15,11 @@ const ReservationInformation = () => {
       <div>
         <h2 className='fw-bold mb-5'>オイル交換予約</h2>
         <p className='fw-bold mb-4'>予約内容確認</p>
-        <CardHorizontalMember />
+        <CardHorizontal image='user' textTitle='オーナー' description='ジーアイテック太郎' />
       </div>
       <div className='mt-5'>
         <p className='fw-bold mb-4'>点検車種</p>
-        <CardHorizontalCar />
+        
       </div>
       <div className='container-infor'>
         <p className='fw-bold mb-4'>予約内容詳細</p>
