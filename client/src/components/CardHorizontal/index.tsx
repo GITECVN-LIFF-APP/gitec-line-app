@@ -6,12 +6,12 @@ export type CardHorizontalProps = {
 
 const CardHorizontal = ({ image, title, description }: CardHorizontalProps) => {
   return (
-    <div className='homepagecard'>
+    <div className='homepage-card'>
       <div className='content'>
         <div className='card'>
-          <div className='firstinfo'>
+          <div className='first-info'>
             <img src={image} />
-            <div className='profileinfo'>
+            <div className='profile-info'>
               <p className='fw-bold mb-4'>{title}</p>
               <p className='bio'>{description}</p>
             </div>

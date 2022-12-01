@@ -2,11 +2,11 @@
 import { Args, Story } from '@storybook/react'
 
 // Components
-import CardHorizontalMember from '@components/CardHorizontal'
+import CardHorizontal from '@components/CardHorizontal'
 
 export default {
-  title: 'CardHorizontalMember',
-  component: CardHorizontalMember,
+  title: 'CardHorizontal',
+  component: CardHorizontal,
 }
 
-export const CardHorizontalDefault: Story<Args> = (args) => <CardHorizontalMember {...args} />
+export const CardHorizontalDefault: Story<Args> = (args) => <CardHorizontal image={''} title={''} description={''} {...args} />
