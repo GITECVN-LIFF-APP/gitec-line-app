@@ -2,7 +2,7 @@
 import { Story } from '@storybook/react'
 
 // Components
-import MyPageCar from '@components/MyPageCar'
+import MyPageCar from '@components/MyPage'
 
 export default {
   title: 'MyPageCar',

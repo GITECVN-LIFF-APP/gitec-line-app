@@ -15,11 +15,9 @@
 @import url('../components/NearBy/style.css');
 @import url('../components/TextArea/style.css');
 @import url('../components/Header/styles.css');
-@import url('../components/CardHorizontalMember/style.css');
-@import url('../components/CardHorizontalCar/style.css');
+@import url('../components/CardHorizontal/style.css');
 @import url('../components/GasStation/style.css');
-@import url('../components/MyPageMember/style.css');
-@import url('../components/MyPageCar/style.css');
+@import url('../components/MyPage/style.css');
 
 /* COMMON STYLE */
 .btn-login {

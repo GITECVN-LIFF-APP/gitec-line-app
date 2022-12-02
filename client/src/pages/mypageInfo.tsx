@@ -1,17 +1,17 @@
 // Components
-import Navbar from '@components/Navbar'
 import Header from '@components/Header'
-import Menu from '@components/Menu'
+import MyPage from '@components/MyPage'
+import Navbar from '@components/Navbar'
 
-const Home = () => {
+const MyPageInfo = () => {
   return (
     <>
       <Header />
       <div className='container mt-3 mb-3'>
-        <Menu />
+        <MyPage />
       </div>
       <Navbar />
     </>
   )
 }
-export default Home
+export default MyPageInfo
