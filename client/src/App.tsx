@@ -4,6 +4,9 @@ import { Route, Routes } from 'react-router-dom'
 // Styles
 import './styles/index.css'
 
+// Components
+import NearBy from '@components/NearBy'
+
 // Pages
 import RegisTerMember from '@pages/registerMember'
 import RegisTerCar from '@pages/registerCar'
@@ -21,6 +24,9 @@ function App() {
       <Route path='/index' element={<Home />} />
       <Route path='/register-member' element={<RegisTerMember />} />
       <Route path='/register-car' element={<RegisTerCar />} />
+      <Route path='/' element={<Login />} />
+      <Route path='/home' element={<Home />} />
+      <Route path='/nearby' element={<NearBy />} />
     </Routes>
   )
 }

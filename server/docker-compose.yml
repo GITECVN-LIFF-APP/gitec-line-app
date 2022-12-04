@@ -1,0 +1,9 @@
+version: '3'
+services:
+  app:
+    build: . 
+    restart: unless-stopped
+    ports:
+    - "1995:1995"
+
+

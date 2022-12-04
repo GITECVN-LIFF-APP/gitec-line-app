@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+
 .btn-main {
   color: var(--white);
   background-color: var(--halloween-orange);
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .btn-main:hover {
@@ -18,4 +21,19 @@
 .btn-outline:hover {
   color: var(--white);
   background-color: var(--halloween-orange);
+}
+
+.button-reservation {
+  width: 130px;
+}
+
+.button-mypage {
+  width: 150px;
+}
+
+.button-mypage-confirm {
+  width: 100%;
+  background-color: var(--white);
+  border-color: var(--halloween-orange);
+  color: var(--halloween-orange);
 }

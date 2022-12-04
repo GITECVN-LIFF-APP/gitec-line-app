@@ -3,15 +3,15 @@ import { Args, Story } from '@storybook/react'
 import { BrowserRouter } from 'react-router-dom'
 
 // components
-import Selection from './index'
+import SelectionService from '@components/SelectionService'
 
 export default {
   title: 'SelectionService',
-  component: Selection,
+  component: SelectionService,
 }
 
 export const SelectionDefault: Story<Args> = (args) => (
   <BrowserRouter>
-    <Selection {...args} />
+    <SelectionService {...args} />
   </BrowserRouter>
 )
