@@ -2,9 +2,21 @@
 import { useEffect, useState } from 'react'
 import liff from '@line/liff'
 import { useNavigate } from 'react-router-dom'
+import { Formik, Form } from 'formik'
+import axios from 'axios'
 
 // Component
 import Input from '@components/Input'
+
+// Types
+import { IAccount } from 'types/account'
+import Button from '@components/Button'
+import { VARIANTS } from '@enums'
+
+const initialValues: IAccount = {
+  username: '',
+  password: '',
+}
 
 interface Profile {
   userId: string
@@ -61,78 +73,121 @@ function Login() {
 
   if (profile.userId !== undefined) {
     console.log('login success')
-    navigate('/home')
+    navigate('/update-info-member')
+  }
+
+  // Validation form login
+  const validateForm = (values: IAccount) => {
+    const errors = {} as IAccount
+    if (!values.username) {
+      errors.username = 'Username is required'
+    } else if (values.username.length > 15) {
+      errors.username = 'Must be 15 characters or less'
+    }
+
+    if (!values.password) {
+      errors.password = 'Password is required'
+    } else if (values.password.length > 15) {
+      errors.password = 'Password be 15 characters or less'
+    }
+
+    return errors
   }
 
   return (
-    <div className='container'>
-      <div className='row'>
-        <div className='col-sm-9 col-md-7 col-lg-5 mx-auto'>
-          <div className='card border-0 shadow rounded-3 my-5'>
-            <div className='card-body p-4 p-sm-5'>
-              <h5 className='card-title text-center mb-5 fw-light fs-5'>Sign In</h5>
-              <form>
-                <div className='htmlForm-floating mb-3'>
-                  <Input
-                    defaultValue=''
-                    id='password'
-                    label='Username'
-                    name='username'
-                    placeholder='Enter username'
-                    type='text'
-                  />
+    <Formik
+      initialValues={initialValues}
+      validate={validateForm}
+      onSubmit={(values, { setSubmitting }) => {
+        console.log(values)
+        axios.post('http://localhost:4000/accounts/add', values).then((res) => console.log(res.data))
+        setSubmitting(false)
+      }}
+    >
+      {({ errors, handleChange, isSubmitting }) => (
+        <div className='container'>
+          <div className='row'>
+            <div className='col-sm-9 col-md-7 col-lg-5 mx-auto'>
+              <div className='card border-0 shadow rounded-3 my-5'>
+                <div className='card-body p-4 p-sm-5'>
+                  <h2 className='text-center mb-5'>Sign In</h2>
+                  <Form>
+                    <div className='mb-4'>
+                      <Input
+                        onChange={handleChange}
+                        id='username'
+                        name='username'
+                        label='Username '
+                        type='text'
+                        errorMessage={errors.username}
+                      />
+                    </div>
+                    <div className='mb-4'>
+                      <Input
+                        onChange={handleChange}
+                        id='password'
+                        name='password'
+                        label='Password'
+                        type='password'
+                        errorMessage={errors.password}
+                      />
+                    </div>
+                    <div className='htmlForm-check mb-3'>
+                      <input
+                        className='htmlForm-check-input'
+                        type='checkbox'
+                        value=''
+                        id='rememberPasswordCheck'
+                      />
+                      <label className='htmlForm-check-label' htmlFor='rememberPasswordCheck'>
+                        Remember password
+                      </label>
+                    </div>
+                    <div className='d-grid'>
+                      {isSubmitting ? (
+                        <button className='btn btn-primary btn-login' type='button' disabled>
+                          <span
+                            className='spinner-border spinner-border-sm'
+                            role='status'
+                            aria-hidden='true'
+                          ></span>
+                          Loading...
+                        </button>
+                      ) : (
+                        <button
+                          className='btn btn-primary btn-login text-uppercase fw-bold'
+                          type='submit'
+                        >
+                          Sign in
+                        </button>
+                      )}
+                    </div>
+                    <hr className='my-4' />
+                    <div className='d-grid mb-2'>
+                      <button
+                        className='btn btn-google btn-login text-uppercase fw-bold'
+                        type='button'
+                      >
+                        <i className='fab fa-google me-2'></i> Sign in with Google
+                      </button>
+                    </div>
+                    <div className='d-grid'>
+                      <button
+                        className='btn btn-line btn-login text-uppercase fw-bold'
+                        type='button'
+                        onClick={login}
+                      >
+                        <i className='fab fa-facebook-f me-2'></i> Sign in with Line
+                      </button>
+                    </div>
+                  </Form>
                 </div>
-                <div className='htmlForm-floating mb-3'>
-                  <Input
-                    defaultValue=''
-                    id='password'
-                    label='Password'
-                    name='password'
-                    placeholder='Enter password'
-                    type='text'
-                  />
-                </div>
-
-                <div className='htmlForm-check mb-3'>
-                  <input
-                    className='htmlForm-check-input'
-                    type='checkbox'
-                    value=''
-                    id='rememberPasswordCheck'
-                  />
-                  <label className='htmlForm-check-label' htmlFor='rememberPasswordCheck'>
-                    Remember password
-                  </label>
-                </div>
-                <div className='d-grid'>
-                  <button
-                    className='btn btn-primary btn-login text-uppercase fw-bold'
-                    type='submit'
-                  >
-                    Sign in
-                  </button>
-                </div>
-                <hr className='my-4' />
-                <div className='d-grid mb-2'>
-                  <button className='btn btn-google btn-login text-uppercase fw-bold' type='submit'>
-                    <i className='fab fa-google me-2'></i> Sign in with Google
-                  </button>
-                </div>
-                <div className='d-grid'>
-                  <button
-                    className='btn btn-facebook btn-login text-uppercase fw-bold'
-                    type='button'
-                    onClick={login}
-                  >
-                    <i className='fab fa-facebook-f me-2'></i> Sign in with Line
-                  </button>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      )}
+    </Formik>
   )
 }
 

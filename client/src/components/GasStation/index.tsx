@@ -15,9 +15,9 @@ const GasStation = () => {
       </div>
       <select className='form-select' form-select-lg>
         <option selected>ナナヨウ類家SS</option>
-        <option value='1'>One</option>
-        <option value='2'>Two</option>
-        <option value='3'>Three</option>
+        <option value='1'>白銀サービスステーション</option>
+        <option value='2'>セルフ旭ヶ丘サービスステーション</option>
+        <option value='3'>白銀サービスステーション</option>
       </select>
       <div className='img-map'>
         <iframe
