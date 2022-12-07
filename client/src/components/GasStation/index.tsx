@@ -1,9 +1,6 @@
 // Components
 import Button from '@components/Button'
 
-// Assets
-import { map } from '@assets'
-
 // Enums
 import { VARIANTS } from '@enums'
 import { Link } from 'react-router-dom'
@@ -23,7 +20,11 @@ const GasStation = () => {
         <option value='3'>Three</option>
       </select>
       <div className='img-map'>
-        <img src={map} />
+        <iframe
+          src='https://www.google.com/maps/d/u/3/embed?mid=1tramBw8INl9P28RTJoBTywejp9MYyiM&ehbc=2E312F'
+          width='100%'
+          height='604'
+        ></iframe>
       </div>
       <div className='mb-5'>
         <h6 className='fw-semibold mb-3'>店舗名</h6>

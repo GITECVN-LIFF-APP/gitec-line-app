@@ -1,3 +1,4 @@
+//Image
 import car from './images/car.svg'
 import checkCar from './images/check-car.png'
 import logo from './images/logo.png'
@@ -14,5 +15,9 @@ import person from './images/person.png'
 import lineIcon from './images/line-icon.png'
 import map from './images/map.png'
 
+//Font
+import notosanjp from './fonts/NotoSansJP-Medium.otf'
 
-export { car, checkCar, logo, loop, oilChange, pika, user, washCar, kerosene, calendar, homeIcon, nearBy, person, lineIcon, map }
+
+
+export { car, checkCar, logo, loop, oilChange, pika, user, washCar, kerosene, calendar, homeIcon, nearBy, person, lineIcon, map, notosanjp }

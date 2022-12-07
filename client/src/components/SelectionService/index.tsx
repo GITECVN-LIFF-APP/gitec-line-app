@@ -52,7 +52,6 @@ const SelectionService = () => {
           <img className='icon' src={kerosene} />
         </div>
       </div>
-      <Navbar />
     </>
   )
 }

@@ -7,7 +7,7 @@ const NearBy = () => {
     <>
       <Header />
       <>
-        <h1>Nearby</h1>
+      <iframe src="https://www.google.com/maps/d/u/3/embed?mid=1tramBw8INl9P28RTJoBTywejp9MYyiM&ehbc=2E312F" width='100%' height='604'></iframe>
       </>
       <Navbar />
     </>

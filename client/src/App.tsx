@@ -17,15 +17,6 @@ import GasStationPage from '@pages/gasStation'
 import PickDateTime from '@pages/pickDateTime'
 import Login from '@pages/login'
 
-// Components
-import CarModal from '@components/CarModal'
-import ReservationInformation from '@components/ReservationInformation'
-import Create from '@Test/Create'
-import Edit from '@Test/Edit'
-import UpdateInfoMember from '@pages/updateInfoMember'
-import RegisterAccount from '@components/RegisterAccount'
-import MemberRegister from '@components/MemberRegister'
-
 function App() {
   return (
     <Routes>
@@ -42,9 +33,10 @@ function App() {
       <Route path='/nearby' element={<NearBy />} />
       <Route path='/oil-change' element={<GasStationPage />} />
       <Route path='/pick-date-time' element={<PickDateTime />} />
-      <Route path='/car-modal' element={<CarModal />} />
+      <Route path='/car-selection' element={<CarSelection />} />
       <Route path='/reservation-confirm' element={<ReservationInformation />} />
       <Route path='/reservation-success' element={<ReservationSuccess />} />
+      <Route path='/mypage' element={<MyPage />} />
     </Routes>
   )
 }

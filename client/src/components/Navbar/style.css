@@ -1,9 +1,14 @@
-.css-imwso6-MuiBottomNavigationAction-label {
-  width: 71px;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+
+.css-13ajy15-MuiBottomNavigationAction-label {
   margin-top: 5px;
 }
 
 .css-1wdueg6 {
   box-shadow: 0 -5px 5px -5px #333;
   padding-top: 10px;
+}
+
+.service {
+  font-family: 'Noto Sans JP', sans-serif;
 }

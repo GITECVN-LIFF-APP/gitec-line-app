@@ -1,16 +1,14 @@
-.homepagecard,
-.badgescard,
-.firstinfo {
+.homepage-card,
+.first-info {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.homepagecard {
+.homepage-card {
   font-family: 'Noto Sans JP', sans-serif;
   width: 100%;
   min-height: 100%;
-  overflow: hidden;
 }
 
 *,
@@ -25,29 +23,30 @@
   padding: 20px;
   border-radius: 10px;
   background-color: white;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border: none;
   position: relative;
   overflow: hidden;
 }
 
-.firstinfo {
+.first-info {
   flex-direction: row;
   z-index: 2;
   position: relative;
   margin-top: 17px;
 }
 
-.firstinfo img {
+.first-info img {
   border-radius: 50%;
   width: 79px;
   height: 79px;
 }
 
-.firstinfo .profileinfo {
+.first-info .profile-info {
   padding: 0px 40px;
 }
 
-.firstinfo .profileinfo p.bio {
+.first-info .profile-info p.bio {
   margin-top: -20px;
   margin-bottom: 20px;
 }
