@@ -9,6 +9,7 @@ let Person = require('./business.modal.js')
 // Defined store route
 personRoutes.route('/add').post(function (req, res) {
   let person = new Person(req.body)
+  console.log('persons', person)
   person
     .save()
     .then((person) => {

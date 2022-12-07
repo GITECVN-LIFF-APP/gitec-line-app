@@ -98,7 +98,6 @@ const MemberRegister = ({ onSubmit }: IContactFormProps) => {
                 errorMessage={errors.phone}
               />
             </div>
-            <p className='text-danger mb-5'>※登録内容は全て必須項目です。</p>
             <Button variant={VARIANTS.MAIN} children='車種情報の入力' typeButton='submit' />
           </form>
         </>
