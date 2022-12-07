@@ -20,6 +20,13 @@
       "@*": ["./*"]
     }
   },
-  "include": ["src"],
+  "include": ["src", "api/DB.js", "api/User.js", "api/index.js", "api"],
+  // "include": [
+  //   "src",
+  //   "gitec-line-app/server/model/db.js",
+  //   "gitec-line-app/server/model/user.js",
+  //   "gitec-line-app/server/model/index.js",
+  //   "gitec-line-app/server"
+  // ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

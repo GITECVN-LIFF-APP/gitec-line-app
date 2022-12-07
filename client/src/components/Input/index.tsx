@@ -1,5 +1,6 @@
 // lib
 import React, { InputHTMLAttributes, RefObject } from 'react'
+import { FormikErrors } from 'formik'
 
 export type InputProps = {
   id: string
@@ -8,9 +9,10 @@ export type InputProps = {
   type: InputHTMLAttributes<HTMLElement>['type']
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
   placeholder?: string
-  errorMessage?: string
+  errorMessage?: string | string[] | FormikErrors<any>[] | FormikErrors<any>
   inputRef?: RefObject<HTMLInputElement>
-  defaultValue: string
+  defaultValue?: string
+  value?: string | number
 }
 
 const Input = ({
@@ -23,6 +25,7 @@ const Input = ({
   errorMessage,
   inputRef,
   defaultValue,
+  value,
 }: InputProps): JSX.Element => {
   return (
     <div className='d-flex flex-column mt-3'>
@@ -41,11 +44,7 @@ const Input = ({
           placeholder={placeholder}
         />
       </div>
-      {errorMessage && (
-        <small data-testid={`${name}-error`} className='badge bg-danger text-wrap fs-6'>
-          {errorMessage}
-        </small>
-      )}
+      {errorMessage && <p className='text-danger m-0'>{errorMessage}</p>}
     </div>
   )
 }

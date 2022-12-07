@@ -27,11 +27,19 @@
 }
 
 .btn-google {
-  color: white !important;
   background-color: #ea4335;
 }
 
-.btn-facebook {
-  color: white !important;
-  background-color: #3b5998;
+.btn-google:hover {
+  opacity: 0.8;
+  background-color: #ea4335;
+}
+
+.btn-line {
+  background-color: #00b900;
+}
+
+.btn-line:hover {
+  background-color: #00b900;
+  opacity: 0.8;
 }

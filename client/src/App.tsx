@@ -8,7 +8,6 @@ import './styles/index.css'
 import NearBy from '@components/NearBy'
 
 // Pages
-import RegisTerMember from '@pages/registerMember'
 import RegisTerCar from '@pages/registerCar'
 import ConfirmInformation from '@pages/confirmInformation'
 import Service from '@pages/service'
@@ -17,19 +16,19 @@ import Home from '@pages/home'
 import GasStationPage from '@pages/gasStation'
 import PickDateTime from '@pages/pickDateTime'
 import Login from '@pages/login'
-import MyPage from '@pages/mypageInfo'
-import CarSelection from '@pages/carSelection'
-import ReservationInformation from '@pages/reservationInformation'
 
 function App() {
   return (
     <Routes>
-      <Route path='/register-member' element={<RegisTerMember />} />
+      <Route path='/' element={<Login />} />
+      <Route path='/update-info-member' element={<UpdateInfoMember />} />
+      <Route path='/create' element={<Create />} />
+      <Route path='/edit/:id' element={<Edit />} />
+      <Route path='/index' element={<Home />} />
       <Route path='/register-car' element={<RegisTerCar />} />
       <Route path='/confirm-information' element={<ConfirmInformation />} />
       <Route path='/service' element={<Service />} />
       <Route path='/reservation' element={<ReservationSuccess />} />
-      <Route path='/' element={<Login />} />
       <Route path='/home' element={<Home />} />
       <Route path='/nearby' element={<NearBy />} />
       <Route path='/oil-change' element={<GasStationPage />} />
