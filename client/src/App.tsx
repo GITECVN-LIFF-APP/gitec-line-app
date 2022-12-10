@@ -23,7 +23,7 @@ import CarSelection from '@pages/carSelection'
 import ReservationInfor from '@pages/reservationInformation'
 import ReservationSuccess from '@pages/reservationSuccess'
 
-function App() {
+export default function App() {
   return (
     <Routes>
       <Route path='/' element={<Login />} />
@@ -46,4 +46,3 @@ function App() {
   )
 }
 
-export default App
