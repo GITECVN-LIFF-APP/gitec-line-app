@@ -72,7 +72,9 @@ function Login() {
   }
 
   if (profile.userId !== undefined) {
-    console.log('login success')
+    liff.getProfile()
+    console.log(profile.userId)
+
     navigate('/update-info-member')
   }
 
@@ -100,7 +102,9 @@ function Login() {
       validate={validateForm}
       onSubmit={(values, { setSubmitting }) => {
         console.log(values)
-        axios.post('http://localhost:4000/accounts/add', values).then((res) => console.log(res.data))
+        axios
+          .post('http://localhost:4000/accounts/add', values)
+          .then((res) => console.log(res.data))
         setSubmitting(false)
       }}
     >

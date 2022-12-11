@@ -16,14 +16,16 @@ import Home from '@pages/home'
 import GasStationPage from '@pages/gasStation'
 import PickDateTime from '@pages/pickDateTime'
 import Login from '@pages/login'
+import UpdateInfoMember from '@pages/updateInfoMember'
+import CarSelection from '@pages/carSelection'
+import ReservationInformation from '@pages/reservationInformation'
+import MyPage from '@components/MyPage'
 
 function App() {
   return (
     <Routes>
       <Route path='/' element={<Login />} />
       <Route path='/update-info-member' element={<UpdateInfoMember />} />
-      <Route path='/create' element={<Create />} />
-      <Route path='/edit/:id' element={<Edit />} />
       <Route path='/index' element={<Home />} />
       <Route path='/register-car' element={<RegisTerCar />} />
       <Route path='/confirm-information' element={<ConfirmInformation />} />
