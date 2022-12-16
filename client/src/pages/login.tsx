@@ -1,7 +1,7 @@
 // Lib
 import { useEffect, useState } from 'react'
 import liff from '@line/liff'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { Formik, Form } from 'formik'
 import axios from 'axios'
 
@@ -100,7 +100,9 @@ function Login() {
       validate={validateForm}
       onSubmit={(values, { setSubmitting }) => {
         console.log(values)
-        axios.post('http://localhost:4000/accounts/add', values).then((res) => console.log(res.data))
+        axios
+          .post('http://localhost:4000/accounts/add', values)
+          .then((res) => console.log(res.data))
         setSubmitting(false)
       }}
     >
@@ -142,6 +144,11 @@ function Login() {
                       <label className='htmlForm-check-label' htmlFor='rememberPasswordCheck'>
                         Remember password
                       </label>
+                      <Link to='/register-member'>
+                        <a className='register' href=''>
+                          Register
+                        </a>
+                      </Link>
                     </div>
                     <div className='d-grid'>
                       {isSubmitting ? (

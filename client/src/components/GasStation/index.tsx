@@ -1,11 +1,23 @@
+// Lib
+import { ChangeEvent } from 'react'
+import { Link } from 'react-router-dom'
+
 // Components
 import Button from '@components/Button'
 
 // Enums
 import { VARIANTS } from '@enums'
-import { Link } from 'react-router-dom'
 
-const GasStation = () => {
+export type GasStationProps = {
+  onGetGasStation: (gasStation: string) => void
+}
+
+const GasStation = ({ onGetGasStation }: GasStationProps) => {
+  const handleGetGasStation = (e: ChangeEvent<HTMLSelectElement>) => {
+    const gasStation = e.target.value
+    onGetGasStation(gasStation)
+  }
+
   return (
     <>
       <div className='container-member'>
@@ -13,11 +25,14 @@ const GasStation = () => {
         <h3 className='fw-bold'>STEP1 </h3>
         <p className='fw-bold mb-4'>店舗を選ぶ</p>
       </div>
-      <select className='form-select' form-select-lg>
+      <select onChange={handleGetGasStation} className='form-select' form-select-lg>
         <option selected>ナナヨウ類家SS</option>
-        <option value='1'>One</option>
-        <option value='2'>Two</option>
-        <option value='3'>Three</option>
+        <option value='セルフ類家サービスステーション'>セルフ類家サービスステーション</option>
+        <option value='セルフ旭ヶ丘サービスステーション'>セルフ旭ヶ丘サービスステーション</option>
+        <option value='白銀サービスステーション'>白銀サービスステーション</option>
+        <option value='江陽サービスステーション'>江陽サービスステーション</option>
+        <option value='青葉サービスステーション'>青葉サービスステーション</option>
+        <option value='浜市川サービスステーション'>浜市川サービスステーション</option>
       </select>
       <div className='img-map'>
         <iframe
@@ -38,10 +53,11 @@ const GasStation = () => {
         <h6 className='fw-semibold mb-3'>お電話番号</h6>
         <p>0000-00-0000</p>
       </div>
-      <Link to={'/pick-date-time'}>
+      <Link to={'/service/pick-date-time'}>
         <Button variant={VARIANTS.MAIN} children='日にち選択へ' />
       </Link>
     </>
   )
 }
+
 export default GasStation

@@ -1,58 +1,57 @@
-// Lib
-import { Box } from '@mui/material'
-import { Link } from 'react-router-dom'
-
-// Components
-import Navbar from '@components/Navbar'
-
 // Assets
 import { oilChange, washCar, kerosene, pika, checkCar, loop } from '@assets'
 
-const SelectionService = () => {
+// Components
+import Service from '@components/Service'
+
+export type SelectionServiceProps = {
+  onGetNameService: (nameService: string) => void
+}
+
+const SelectionService = ({ onGetNameService }: SelectionServiceProps) => {
   return (
     <>
       <div>
         <h2>各種予約</h2>
-        <Link to={'/oil-change'}>
-          <div className='img-service'>
-            <div className='text'>
-              <a className='label text-decoration-none'>オイル交換予約</a>
-            </div>
-            <img className='icon' src={oilChange} />
-          </div>
-        </Link>
-        <div className='img-service'>
-          <div className='text'>
-            <a className='label text-decoration-none'>洗車予約</a>
-          </div>
-          <img className='icon' src={washCar} />
-        </div>
-        <div className='img-service'>
-          <div className='text'>
-            <a className='label text-decoration-none'>タイヤ交換予約</a>
-          </div>
-          <img className='icon' src={loop} />
-        </div>
-        <div className='img-service'>
-          <div className='text'>
-            <a className='label text-decoration-none'>Keeperコーディング予約</a>
-          </div>
-          <img className='icon' src={pika} />
-        </div>
-        <div className='img-service'>
-          <div className='text'>
-            <a className='label text-decoration-none'>車検予約</a>
-          </div>
-          <img className='icon' src={checkCar} />
-        </div>
-        <div className='img-service'>
-          <div className='text'>
-            <a className='label text-decoration-none'>灯油予約</a>
-          </div>
-          <img className='icon' src={kerosene} />
-        </div>
+        <Service
+          onGetNameService={onGetNameService}
+          img={oilChange}
+          link='oil-change'
+          nameService='オイル交換予約'
+        />
+        <Service
+          onGetNameService={onGetNameService}
+          img={washCar}
+          link='wash-car'
+          nameService='洗車予約'
+        />
+        <Service
+          onGetNameService={onGetNameService}
+          img={loop}
+          link='tire-change'
+          nameService='タイヤ交換予約'
+        />
+        <Service
+          onGetNameService={onGetNameService}
+          img={pika}
+          link='pika'
+          nameService='Keeperコーディング予約'
+        />
+        <Service
+          onGetNameService={onGetNameService}
+          img={checkCar}
+          link='check-car'
+          nameService='車検予約'
+        />
+        <Service
+          onGetNameService={onGetNameService}
+          img={kerosene}
+          link='kero-sene'
+          nameService='灯油予約'
+        />
       </div>
     </>
   )
 }
+
 export default SelectionService

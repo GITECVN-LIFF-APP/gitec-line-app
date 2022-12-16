@@ -1,11 +1,20 @@
+// Lib
+import { Link } from 'react-router-dom'
+
 // Components
 import Button from '@components/Button'
 
 // Enums
 import { SIZES, VARIANTS } from '@enums'
-import { Link } from 'react-router-dom'
+
+// Helpers
+import { clearLocalStorage } from '@helpers/clearLocalStorage'
 
 const Reservation = () => {
+  const handleClearLocalStorage = () => {
+    clearLocalStorage('service')
+  }
+
   return (
     <>
       <h2 className='fw-bold mb-5'>予約完了</h2>
@@ -15,8 +24,13 @@ const Reservation = () => {
         内容がお間違いない場合は、当日になりましたら、 メッセージに添付しておりますQRコードをご準備
         いただき、店舗へお越しください。
       </p>
-      <Link to={'/'}>
-        <Button size={SIZES.LARGE} variant={VARIANTS.MAIN} children='ホームへ戻る' />
+      <Link to={'/service'}>
+        <Button
+          onClick={handleClearLocalStorage}
+          size={SIZES.LARGE}
+          variant={VARIANTS.MAIN}
+          children='ホームへ戻る'
+        />
       </Link>
     </>
   )

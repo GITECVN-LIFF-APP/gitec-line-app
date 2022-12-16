@@ -2,15 +2,23 @@
 import '@fullcalendar/react/dist/vdom'
 import FullCalendar from '@fullcalendar/react'
 import timegridPlugin from '@fullcalendar/timegrid'
+import { Link } from 'react-router-dom'
 
 // Enums
 import { VARIANTS } from '@enums'
 
 // Components
 import Button from '@components/Button'
-import { Link } from 'react-router-dom'
 
-const Calendar = () => {
+export type CalendarProps = {
+  onGetDateTimePicker: (dateTimePicker: string) => void
+}
+
+const Calendar = ({ onGetDateTimePicker }: CalendarProps) => {
+  const handleGetDateTimePicker = () => {
+    onGetDateTimePicker('15-12-2022')
+  }
+
   return (
     <>
       <div>
@@ -32,8 +40,8 @@ const Calendar = () => {
         <h6 className='fw-semibold mb-4'>ご希望の日時</h6>
         <p>10月9日（日）　16:00〜17:00</p>
       </div>
-      <Link to={'/car-selection'}>
-      <Button variant={VARIANTS.MAIN} children='日にち選択へ' />
+      <Link to={'/service/car-selection'}>
+        <Button onClick={handleGetDateTimePicker} variant={VARIANTS.MAIN} children='日にち選択へ' />
       </Link>
     </>
   )

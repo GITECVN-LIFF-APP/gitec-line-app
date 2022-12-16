@@ -43,3 +43,9 @@
   background-color: #00b900;
   opacity: 0.8;
 }
+
+.register {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+}

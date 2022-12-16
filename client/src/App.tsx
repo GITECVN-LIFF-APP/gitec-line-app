@@ -9,35 +9,47 @@ import NearBy from '@components/NearBy'
 
 // Pages
 import RegisTerCar from '@pages/registerCar'
-import ConfirmInformation from '@pages/confirmInformation'
-import Service from '@pages/service'
-import ReservationSuccess from '@pages/reservationSuccess'
-import Home from '@pages/home'
-import GasStationPage from '@pages/gasStation'
-import PickDateTime from '@pages/pickDateTime'
+import Create from '@Test/Create'
+import Edit from '@Test/Edit'
+import Home from '@Test/Home'
 import Login from '@pages/login'
+import ConfirmInformation from '@pages/confirmInformation'
+import ReservationSuccess from '@pages/reservationSuccess'
+import Service from '@pages/service'
+import UpdateInfoMember from '@pages/updateInfoMember'
+import MypageInfor from '@pages/mypageInfo'
+import GasStation from '@pages/gasStation'
+import PickDateTime from '@pages/pickDateTime'
+import CarSelection from '@pages/carSelection'
+import RegisterMember from '@pages/registerMember'
+import ReservationInformation from '@pages/reservationInformation'
+
+// Contexts
+import ServiceProvider from '@contexts/serviceContext'
 
 function App() {
   return (
-    <Routes>
-      <Route path='/' element={<Login />} />
-      <Route path='/update-info-member' element={<UpdateInfoMember />} />
-      <Route path='/create' element={<Create />} />
-      <Route path='/edit/:id' element={<Edit />} />
-      <Route path='/index' element={<Home />} />
-      <Route path='/register-car' element={<RegisTerCar />} />
-      <Route path='/confirm-information' element={<ConfirmInformation />} />
-      <Route path='/service' element={<Service />} />
-      <Route path='/reservation' element={<ReservationSuccess />} />
-      <Route path='/home' element={<Home />} />
-      <Route path='/nearby' element={<NearBy />} />
-      <Route path='/oil-change' element={<GasStationPage />} />
-      <Route path='/pick-date-time' element={<PickDateTime />} />
-      <Route path='/car-selection' element={<CarSelection />} />
-      <Route path='/reservation-confirm' element={<ReservationInformation />} />
-      <Route path='/reservation-success' element={<ReservationSuccess />} />
-      <Route path='/mypage' element={<MyPage />} />
-    </Routes>
+    <ServiceProvider>
+      <Routes>
+        <Route path='/' element={<Login />} />
+        <Route path='/update-info-member' element={<UpdateInfoMember />} />
+        <Route path='/create' element={<Create />} />
+        <Route path='/edit/:id' element={<Edit />} />
+        <Route path='/index' element={<Home />} />
+        <Route path='/register-car' element={<RegisTerCar />} />
+        <Route path='/confirm-information' element={<ConfirmInformation />} />
+        <Route path='/service' element={<Service />} />
+        <Route path='service/reservation-success' element={<ReservationSuccess />} />
+        <Route path='/home' element={<Home />} />
+        <Route path='/nearby' element={<NearBy />} />
+        <Route path='/mypage' element={<MypageInfor />} />
+        <Route path='service/oil-change' element={<GasStation />} />
+        <Route path='service/pick-date-time' element={<PickDateTime />} />
+        <Route path='service/car-selection' element={<CarSelection />} />
+        <Route path='service/reservation-confirm' element={<ReservationInformation />} />
+        <Route path='register-member' element={<RegisterMember />} />
+      </Routes>
+    </ServiceProvider>
   )
 }
 

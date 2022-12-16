@@ -1,15 +1,28 @@
+// Lib
+import { Link } from 'react-router-dom'
+
 // Components
 import CardHorizontal from '@components/CardHorizontal'
 import Button from '@components/Button'
 
 // Enums
 import { SIZES, VARIANTS } from '@enums'
-import { Link } from 'react-router-dom'
 
 // Assets
 import { user, car } from '@assets'
 
-const ReservationInformation = () => {
+// Helpers
+import { clearLocalStorage } from '@helpers/clearLocalStorage'
+
+export type ReservationInformationProps = {
+  onAddService: () => void
+}
+
+const ReservationInformation = ({ onAddService }: ReservationInformationProps) => {
+  const handleClearLocalStorage = () => {
+    clearLocalStorage('service')
+  }
+
   return (
     <div className='container'>
       <div>
@@ -47,8 +60,9 @@ const ReservationInformation = () => {
       <div className='container'>
         <div className='row mb-5'>
           <div className='col h6'>
-            <Link to={'/reservation-success'}>
+            <Link to={'/service/reservation-success'}>
               <Button
+                onClick={onAddService}
                 className='button-reservation'
                 size={SIZES.MEDIUM}
                 variant={VARIANTS.MAIN}
@@ -59,6 +73,7 @@ const ReservationInformation = () => {
           <div className='col h6'>
             <Link to={'/service'}>
               <Button
+                onClick={handleClearLocalStorage}
                 className='button-reservation'
                 size={SIZES.MEDIUM}
                 variant={VARIANTS.MAIN}

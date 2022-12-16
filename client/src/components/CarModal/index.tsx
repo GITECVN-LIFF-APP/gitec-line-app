@@ -1,3 +1,6 @@
+// Lib
+import { Link } from 'react-router-dom'
+
 // Assets
 import { car } from '@assets'
 
@@ -6,9 +9,16 @@ import Button from '@components/Button'
 
 // Enums
 import { VARIANTS } from '@enums'
-import { Link } from 'react-router-dom'
 
-const CarModal = () => {
+export type CarModalProps = {
+  onGetCarSelectionId: (carSelectionId: string) => void
+}
+
+const CarModal = ({ onGetCarSelectionId }: CarModalProps) => {
+  const handleGetCarSelection = () => {
+    onGetCarSelectionId('car01')
+  }
+
   return (
     <>
       <h2 className='fw-bold mb-5'>オイル交換予約</h2>
@@ -23,8 +33,8 @@ const CarModal = () => {
           <h5 className='card-title fw-semibold'>ルーミー</h5>
         </div>
       </div>
-      <Link to={'/reservation-confirm'}>
-        <Button variant={VARIANTS.MAIN} children='車種情報の入力' />
+      <Link to={'/service/reservation-confirm'}>
+        <Button onClick={handleGetCarSelection} variant={VARIANTS.MAIN} children='車種情報の入力' />
       </Link>
     </>
   )
