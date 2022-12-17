@@ -12,7 +12,7 @@ registerMemberRoutes.route('/add').post(function (req, res) {
   registerMember
     .save()
     .then((registerMember) => {
-      res.status(200).json({ registerMember: 'registerMember in added successfully' })
+      res.status(200).json({ registerMember: 'Register member in added successfully' })
     })
     .catch((err) => {
       res.status(400).send('unable to save to database')

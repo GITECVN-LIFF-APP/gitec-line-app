@@ -26,7 +26,7 @@ app.use(bodyParser.json())
 
 app.use('/persons', personsRoute)
 app.use('/services', serviceRoutes)
-app.use('/accounts', registerMemberRoutes)
+app.use('/members', registerMemberRoutes)
 
 app.listen(PORT, function () {
   console.log('Server is running on Port:', PORT)
