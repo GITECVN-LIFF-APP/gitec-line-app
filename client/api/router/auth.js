@@ -1,5 +1,5 @@
 const express = require('express')
-const router = express.Router()
+const authRouter = express.Router()
 
 
 const User = require('../models/User')
@@ -10,9 +10,8 @@ const User = require('../models/User')
 //@desc Regiser user
 //@access Public
 
-router.post('/register', async(req,res) => {
-    
-    
+authRouter.route('/register').post(function(req,res)) {
+   
 })
 
 
