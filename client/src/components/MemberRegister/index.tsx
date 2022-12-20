@@ -1,5 +1,6 @@
 // Lib
 import { Formik } from 'formik'
+import { Link } from 'react-router-dom'
 
 // Components
 import Button from '@components/Button'
@@ -10,6 +11,7 @@ import { VARIANTS } from '@enums'
 
 // Types
 import { IMember } from 'types/member'
+
 
 const initialValues: IMember = {
   name: '',
@@ -98,7 +100,9 @@ const MemberRegister = ({ onSubmit }: IContactFormProps) => {
                 errorMessage={errors.phone}
               />
             </div>
+            <Link to={'/register-car'}>
             <Button variant={VARIANTS.MAIN} children='車種情報の入力' typeButton='submit' />
+            </Link>
           </form>
         </>
       )}

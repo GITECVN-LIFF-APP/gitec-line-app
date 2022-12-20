@@ -61,7 +61,7 @@ const RegisterMember = () => {
         }
 
         axios
-          .post('http://localhost:4000/accounts/add', accountRegister)
+          .post('http://publicdomain.cybercore.co.jp/api/user', accountRegister)
           .then((res) => console.log(res.data))
 
         // Loading indacator
@@ -77,14 +77,14 @@ const RegisterMember = () => {
             <div className='col-sm-9 col-md-7 col-lg-5 mx-auto'>
               <div className='card border-0 shadow rounded-3 my-5'>
                 <div className='card-body p-4 p-sm-5'>
-                  <h2 className='text-center mb-5'>Sign Up</h2>
+                  <h2 className='text-center mb-5'>サインアップ</h2>
                   <Form>
                     <div className='mb-4'>
                       <Input
                         onChange={handleChange}
                         id='username'
                         name='username'
-                        label='Username '
+                        label='ユ ー ザ ー '
                         type='text'
                         errorMessage={errors.username}
                       />
@@ -94,7 +94,7 @@ const RegisterMember = () => {
                         onChange={handleChange}
                         id='password'
                         name='password'
-                        label='Password'
+                        label='パスワード'
                         type='password'
                         errorMessage={errors.password}
                       />
@@ -104,7 +104,7 @@ const RegisterMember = () => {
                         onChange={handleChange}
                         id='confirmPassword'
                         name='confirmPassword'
-                        label='Confirm Password'
+                        label='パスワードを認証する'
                         type='password'
                         errorMessage={errors.confirmPassword}
                       />
@@ -115,7 +115,7 @@ const RegisterMember = () => {
                         type='button'
                         onClick={handleCancleRegister}
                       >
-                        Cancle
+                        キャンセル
                       </button>
                       {isSubmitting ? (
                         <button className='btn btn-primary btn-login' type='button' disabled>
@@ -131,7 +131,7 @@ const RegisterMember = () => {
                           className='btn btn-primary btn-login text-uppercase fw-bold'
                           type='submit'
                         >
-                          Register
+                          登録
                         </button>
                       )}
                     </div>

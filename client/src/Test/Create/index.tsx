@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 export default class Create extends Component {
-  constructor(props) {
+  constructor(props: {} | Readonly<{}>) {
     super(props)
     this.onChangeName = this.onChangeName.bind(this)
     this.onChangeCompany = this.onChangeCompany.bind(this)
@@ -18,35 +18,35 @@ export default class Create extends Component {
     }
   }
 
-  onChangeName(e) {
+  onChangeName(e: { target: { value: any } }) {
     this.setState({
       name: e.target.value,
     })
   }
 
-  onChangeCompany(e) {
+  onChangeCompany(e: { target: { value: any } }) {
     this.setState({
       company: e.target.value,
     })
   }
 
-  onChangeAge(e) {
+  onChangeAge(e: { target: { value: any } }) {
     this.setState({
       age: e.target.value,
     })
   }
 
-  onSubmit(e) {
+  onSubmit(e: { preventDefault: () => void }) {
     e.preventDefault()
 
-    const obj = {
-      name: this.state.name,
-      company: this.state.company,
-      age: this.state.age,
-    }
-    console.log('obj1', obj)
+    // const obj = {
+    //   name: this.state.name,
+    //   company: this.state.company,
+    //   age: this.state.age,
+    // }
+    // console.log('obj1', obj)
 
-    axios.post('http://localhost:4000/persons/add', obj).then((res) => console.log(res.data))
+    // axios.post('http://localhost:4000/persons/add', obj).then((res) => console.log(res.data))
 
     this.setState({
       name: '',
@@ -65,7 +65,7 @@ export default class Create extends Component {
             <input
               type='text'
               className='form-control'
-              value={this.state.name}
+              // value={this.state.name}
               onChange={this.onChangeName}
             />
           </div>
@@ -74,7 +74,7 @@ export default class Create extends Component {
             <input
               type='text'
               className='form-control'
-              value={this.state.company}
+              // value={this.state.company}
               onChange={this.onChangeCompany}
             />
           </div>
@@ -83,7 +83,7 @@ export default class Create extends Component {
             <input
               type='text'
               className='form-control'
-              value={this.state.age}
+              // value={this.state.age}
               onChange={this.onChangeAge}
             />
           </div>

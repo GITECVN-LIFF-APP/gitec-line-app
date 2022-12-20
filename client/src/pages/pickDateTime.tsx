@@ -2,11 +2,12 @@
 import { useContext } from 'react'
 
 // Components
-import Calendar from '@components/Calendar'
 import Header from '@components/Header'
+import Calendar from '@components/Calendar'
 
 // Contexts
 import { ServiceContext } from '@contexts/serviceContext'
+
 
 const PickDateTime = () => {
   const { setPickDateTime } = useContext(ServiceContext)
@@ -19,7 +20,9 @@ const PickDateTime = () => {
     <>
       <Header />
       <div className='container mt-3 mb-3'>
-        <Calendar onGetDateTimePicker={handleGetDateTimePicker} />
+        <Calendar onGetDateTimePicker={function (dateTimePicker: string): void {
+          throw new Error('Function not implemented.')
+        } } />
       </div>
     </>
   )

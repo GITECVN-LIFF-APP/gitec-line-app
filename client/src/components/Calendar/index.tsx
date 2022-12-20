@@ -1,7 +1,4 @@
 // Lib
-import '@fullcalendar/react/dist/vdom'
-import FullCalendar from '@fullcalendar/react'
-import timegridPlugin from '@fullcalendar/timegrid'
 import { Link } from 'react-router-dom'
 
 // Enums
@@ -26,16 +23,7 @@ const Calendar = ({ onGetDateTimePicker }: CalendarProps) => {
         <h3 className='fw-bold'>STEP2</h3>
         <p className='fw-bold mb-4'>日にちを選ぶ</p>
       </div>
-      <FullCalendar
-        plugins={[timegridPlugin]}
-        duration={4}
-        headerToolbar={{
-          start: 'today prev,next',
-          center: 'title',
-          end: 'dayGridMonth',
-        }}
-        weekNumbers
-      />
+      
       <div className='mb-5 mt-4'>
         <h6 className='fw-semibold mb-4'>ご希望の日時</h6>
         <p>10月9日（日）　16:00〜17:00</p>

@@ -10,7 +10,7 @@ import { validationService } from '@helpers/validationService'
 
 const ReservationInformation = () => {
   const handleAddService = () => {
-    const service = JSON.parse(localStorage.getItem('service'))
+    const service = JSON.parse(localStorage.getItem('service')|| '{}')
 
     // Validation service
     const { isValid, errors } = validationService(service)
