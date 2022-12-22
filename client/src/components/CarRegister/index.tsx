@@ -1,9 +1,13 @@
+//Lib
+import { Link } from 'react-router-dom'
+
 // Components
 import Button from '@components/Button'
 import Input from '@components/Input'
 
 // Enums
 import { VARIANTS } from '@enums'
+
 
 const CarRegister = () => {
   return (
@@ -39,7 +43,9 @@ const CarRegister = () => {
         </div>
       </div>
       <p className='text-danger mb-5'>※登録内容は全て必須項目です。</p>
+      <Link to={'/confirm-information'}>
       <Button variant={VARIANTS.MAIN} children='車種情報の入力' />
+      </Link>
     </>
   )
 }

@@ -23,9 +23,11 @@ import PickDateTime from '@pages/pickDateTime'
 import CarSelection from '@pages/carSelection'
 import RegisterMember from '@pages/registerMember'
 import ReservationInformation from '@pages/reservationInformation'
+import RegisterSuccessMember from '@pages/registerSuccess'
 
 // Contexts
 import ServiceProvider from '@contexts/serviceContext'
+
 
 function App() {
   return (
@@ -48,6 +50,8 @@ function App() {
         <Route path='service/car-selection' element={<CarSelection />} />
         <Route path='service/reservation-confirm' element={<ReservationInformation />} />
         <Route path='register-member' element={<RegisterMember />} />
+        <Route path='/register-success' element={<RegisterSuccessMember />} />
+        
       </Routes>
     </ServiceProvider>
   )

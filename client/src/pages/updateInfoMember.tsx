@@ -9,7 +9,7 @@ import { IMember } from 'types/member'
 const UpdateInfoMember = () => {
   const handleOnSubmitForm = (value: IMember) => {
     console.log('value', value)
-    axios.post('http://publicdomain.cybercore.co.jp/api/user', value).then((res) => console.log(res.data))
+    axios.post('http://localhost:5000/api/user', value).then((res) => console.log(res.data))
   }
 
   return (

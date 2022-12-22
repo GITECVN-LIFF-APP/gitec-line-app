@@ -61,7 +61,7 @@ const RegisterMember = () => {
         }
 
         axios
-          .post('http://publicdomain.cybercore.co.jp/api/user', accountRegister)
+          .post('http://localhost:5000/api/user', accountRegister)
           .then((res) => console.log(res.data))
 
         // Loading indacator

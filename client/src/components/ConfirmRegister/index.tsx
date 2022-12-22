@@ -1,8 +1,17 @@
+//Lib
+import useSWR, { SWRConfig } from 'swr'
+
 // Components
 import Button from '@components/Button'
 
 // Enums
 import { VARIANTS } from '@enums'
+import { Link } from 'react-router-dom'
+
+const fetcher = (url: RequestInfo | URL) => fetch(url).then((res) => res.json())
+const API = 'http://publicdomain.cybercore.co.jp/api/user'
+
+
 
 const ConfirmRegister = () => {
   return (
@@ -10,7 +19,7 @@ const ConfirmRegister = () => {
       <h2 className='fw-bold mb-5'>登録内容確認</h2>
       <div className='mb-5'>
         <h6 className='fw-semibold mb-3'>お名前</h6>
-        <p>ジーアイテック太郎</p>
+        <p>{}</p>
       </div>
       <div className='mb-5'>
         <h6 className='fw-semibold mb-3'>フリガナ</h6>
@@ -48,7 +57,9 @@ const ConfirmRegister = () => {
           <p>ルーミー</p>
         </div>
       </div>
+      <Link to={'/register-success'}>
       <Button variant={VARIANTS.MAIN} children='車種情報の入力' />
+      </Link>
     </>
   )
 }
