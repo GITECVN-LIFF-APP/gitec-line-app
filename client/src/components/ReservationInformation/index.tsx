@@ -9,7 +9,7 @@ import Button from '@components/Button'
 import { SIZES, VARIANTS } from '@enums'
 
 // Assets
-import { user, car } from '@assets'
+import { userimg, carimg } from '@assets'
 
 // Helpers
 import { clearLocalStorage } from '@helpers/clearLocalStorage'
@@ -30,13 +30,13 @@ const ReservationInformation = ({ onAddService }: ReservationInformationProps) =
         <p className='fw-bold mb-4'>予約内容確認</p>
       </div>
       <div className='container'>
-        <CardHorizontal image={user} title='オーナー' description='ジーアイテック太郎' />
+        <CardHorizontal image={userimg} title='オーナー' description='ジーアイテック太郎' />
       </div>
       <div className='mt-5'>
         <p className='fw-bold mb-4'>点検車種</p>
       </div>
       <div className='container'>
-        <CardHorizontal image={car} title='トヨタ  ルーミー' description={''} />
+        <CardHorizontal image={carimg} title='トヨタ  ルーミー' description={''} />
       </div>
       <div className='mt-5'>
         <p className='fw-bold mb-5'>予約内容詳細</p>

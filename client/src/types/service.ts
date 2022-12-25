@@ -5,3 +5,11 @@ export interface IService {
   selectedCar: string
   idCustomer: string
 }
+
+export interface IserviceDB{
+  id: string
+  name: string
+  image: string
+  link: string
+  price: string 
+}

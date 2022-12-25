@@ -1,6 +1,8 @@
 export interface ICar {
-  manufacturer: string
-  nameCar: string
-  licensePlate: string
-  expiryDate: string
+  carCompany?: string
+  vehicles?: string
+  licensePlate?: string
+  registrationDate?: string 
+  userId?: string 
+  id?:string
 }

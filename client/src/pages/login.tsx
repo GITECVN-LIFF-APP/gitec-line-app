@@ -26,12 +26,15 @@ interface Profile {
 }
 
 function Login() {
+  const [listUser, setListUser] = useState([])
+  const [watting, setWatting]= useState(false)
+  
   const navigate = useNavigate()
 
   const [message, setMessage] = useState('')
   const [data, setData] = useState({
     isInClient: false,
-    os: 'ios',
+    os: '',
     isInAppBrowser: false,
     isLoggedIn: false,
   })
@@ -52,6 +55,13 @@ function Login() {
       if (liff.isLoggedIn()) {
         const profile = await liff.getProfile()
         setProfile(profile)
+        console.log(profile);
+        const res = await axios.get('https://sandy-halved-pleasure.glitch.me/users?lineId=' + profile.userId)
+        if (res.data.length === 1) {
+                    localStorage.setItem('userSession', JSON.stringify(res.data[0]))
+                     navigate('/mypage')
+                     console.log(listUser.length)
+                   } else navigate('/update-info-member',{state:{lineId:profile.userId}})
       }
     } catch (error) {
       setMessage('LIFF init failed.')
@@ -71,33 +81,39 @@ function Login() {
     liff.login()
   }
 
-  if (profile.userId !== undefined) {
-    // liff.getProfile();
-    liff
-      .getProfile()
-      .then((profile) => {
-        const userId = profile.userId
-        console.log(userId)
-      })
-      .catch((err) => {
-        console.log('error', err)
-      })
-    navigate('/update-info-member')
-  }
+  // if (profile.userId !== undefined) {
+  //   // liff.getProfile();
+  //   liff
+  //     .getProfile()
+  //     .then((profile) => {
+  //       const userId = profile.userId
+  //        fetch(userId)
+  //        if(!watting){
+  //          if (listUser.length === 1) {
+  //            navigate('/mypage')
+  //            console.log(listUser.length)
+  //          } else navigate('/update-info-member')
+  //        }
+  //       // listUser.length === 1 ? navigate('/mypage') : navigate('/update-info-member')
+  //     })
+  //     .catch((err) => {
+  //       console.log('error', err)
+  //     })
+  // }
 
   // Validation form login
   const validateForm = (values: IAccount) => {
     const errors = {} as IAccount
     if (!values.username) {
-      errors.username = 'Username is required'
+      errors.username = ''
     } else if (values.username.length > 15) {
-      errors.username = 'Must be 15 characters or less'
+      errors.username = ''
     }
 
     if (!values.password) {
-      errors.password = 'Password is required'
+      errors.password = ''
     } else if (values.password.length > 15) {
-      errors.password = 'Password be 15 characters or less'
+      errors.password = ''
     }
 
     return errors
@@ -110,7 +126,7 @@ function Login() {
       onSubmit={(values, { setSubmitting }) => {
         console.log(values)
         axios
-          .post('http://publicdomain.cybercore.co.jp/api/user', values)
+          .post('https://sandy-halved-pleasure.glitch.me/users', values)
           .then((res) => console.log(res.data))
         setSubmitting(false)
       }}

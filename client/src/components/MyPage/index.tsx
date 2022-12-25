@@ -8,15 +8,34 @@ import Button from '@components/Button'
 import { SIZES, VARIANTS } from '@enums'
 
 // Assets
-import { car, user } from '@assets'
+import { carimg, userimg } from '@assets'
+import { fetcher } from '@constants/fetch'
+import useSWR from 'swr'
+import { IMember } from 'types/member'
+import { ICar } from 'types/car'
 
 const MyPage = () => {
+  const userLocal: IMember = JSON.parse(localStorage.getItem('userSession') || 'null')
+
+  const { data: user } = useSWR<IMember>(
+    'https://sandy-halved-pleasure.glitch.me/users/' + userLocal.id,
+    fetcher,
+  )
+  const { data: car } = useSWR<ICar[]>(
+    'https://sandy-halved-pleasure.glitch.me/car?userId=' + userLocal.id,
+    fetcher,
+  )
+  console.log('mypage',user,car);
+  
+
   const [isMyCar, setIsMycar] = useState<boolean>(false)
 
   const handleClick = () => {
     setIsMycar(!isMyCar)
   }
 
+  if (!user) return  <h1>...loading</h1>;
+  if (!car) return <h1>...loading</h1>;
   const renderButton = () => {
     return (
       <>
@@ -53,21 +72,21 @@ const MyPage = () => {
         <div className='row mb-2'>{renderButton()}</div>
         <div className='row mb-5'>
           <div className='p-2 col-3 ms-3'>
-            <img src={car} className='img-fluid rounded-start' alt='...' />
+            <img src={carimg} className='img-fluid rounded-start' alt='...' />
           </div>
           <div className='col-8 d-flex align-items-center'>
-            <h5 className='card-title mx-3 fw-semibold'>トヨタ</h5>
-            <h5 className='card-title fw-semibold'>ルーミー</h5>
+            <h5 className='card-title mx-3 fw-semibold'>{car[0]?.carCompany}</h5>
+            <h5 className='card-title fw-semibold'>{car[0]?.vehicles}</h5>
           </div>
         </div>
         <div className='row mb-5'>
           <div className='col'>
             <h6 className='fw-semibold mb-3'>車のナンバー</h6>
-            <p>八戸 あ 0000</p>
+            <p>{car[0]?.licensePlate}</p>
           </div>
           <div className='col'>
             <h6 className='fw-semibold mb-3'>車検満了日</h6>
-            <p>2023年4月</p>
+            <p>{car[0]?.registrationDate}</p>
           </div>
         </div>
         <div className='container'>
@@ -101,7 +120,7 @@ const MyPage = () => {
         <div className='row mb-2'>{renderButton()}</div>
         <div className='row mb-5'>
           <div className='firstinfo'>
-            <img src={user} />
+            <img src={userimg} />
             <div className='profileinfo'>
               <div className='d-flex align-items-center'>
                 <h5 className='card-title fw-semibold'>ジーアイテック太郎</h5>
@@ -112,20 +131,20 @@ const MyPage = () => {
         <div className='row mb-5'>
           <div className='col'>
             <h6 className='fw-semibold mb-3'>お名前</h6>
-            <p>ジーアイテック太郎</p>
+            <p>{user.name}</p>
           </div>
           <div className='col'>
             <h6 className='fw-semibold mb-3'>フリガナ</h6>
-            <p>ジーアイテックタロウ</p>
+            <p>{user.furigana}</p>
           </div>
         </div>
         <div className='mb-5'>
           <h6 className='fw-semibold mb-3'>住所</h6>
-          <p>青森県八戸市根城二丁目30-1</p>
+          <p>{user.address}</p>
         </div>
         <div className='mb-5'>
           <h6 className='fw-semibold mb-3'>電話番号</h6>
-          <p>000-0000-0000</p>
+          <p>{user.phone}</p>
         </div>
         <div className='container'>
           <div className='row mb-4'>

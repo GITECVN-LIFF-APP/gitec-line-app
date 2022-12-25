@@ -7,58 +7,64 @@ import Button from '@components/Button'
 // Enums
 import { VARIANTS } from '@enums'
 import { Link } from 'react-router-dom'
-
-const fetcher = (url: RequestInfo | URL) => fetch(url).then((res) => res.json())
-const API = 'http://publicdomain.cybercore.co.jp/api/user'
-
+import { IMember } from 'types/member'
+import { ICar } from 'types/car'
+import { fetcher } from '@constants/fetch'
 
 
 const ConfirmRegister = () => {
+  const user:IMember=JSON.parse(
+    localStorage.getItem('userSession') || 'null'
+  );
+  const { data: car } = useSWR<ICar[]>(
+    'https://sandy-halved-pleasure.glitch.me/car?userId=' + user.id,
+    fetcher,
+  )
+    console.log(car?.[0]);
+    
+  if (!car) return  <h1>...loading</h1>;
   return (
     <>
       <h2 className='fw-bold mb-5'>登録内容確認</h2>
       <div className='mb-5'>
         <h6 className='fw-semibold mb-3'>お名前</h6>
-        <p>{}</p>
+        <p>{user.name}</p>
       </div>
       <div className='mb-5'>
         <h6 className='fw-semibold mb-3'>フリガナ</h6>
-        <p>ジーアイテックタロウ</p>
+        <p>{user.furigana}</p>
       </div>
       <div className='mb-5'>
         <h6 className='fw-semibold mb-3'>住所</h6>
-        <p>青森県八戸市根城二丁目30-1</p>
+        <p>{user.address}</p>
       </div>
       <div className='mb-5'>
         <h6 className='fw-semibold mb-3'>電話番号</h6>
-        <p>000-0000-0000</p>
+        <p>{user.phone}</p>
       </div>
-      <div className='mb-5'>
-        <h6 className='fw-semibold mb-3'>住所</h6>
-        <p>青森県八戸市根城二丁目30-1</p>
-      </div>
+
       <div className='row mb-5'>
         <div className='col'>
           <h6 className='fw-semibold mb-3'>お持ちの車種メーカー</h6>
-          <p>トヨタ</p>
+          <p>{car[0]?.carCompany}</p>
         </div>
         <div className='col'>
           <h6 className='fw-semibold mb-3'>お持ちの車種名</h6>
-          <p>ルーミー</p>
+          <p>{car[0]?.vehicles}</p>
         </div>
       </div>
       <div className='row mb-5'>
         <div className='col'>
           <h6 className='fw-semibold mb-3'>車のナンバー</h6>
-          <p>八戸 あ 0000</p>
+          <p>{car[0]?.licensePlate}</p>
         </div>
         <div className='col'>
           <h6 className='fw-semibold mb-3'>車検満了日</h6>
-          <p>ルーミー</p>
+          <p>{car[0]?.registrationDate}</p>
         </div>
       </div>
       <Link to={'/register-success'}>
-      <Button variant={VARIANTS.MAIN} children='車種情報の入力' />
+        <Button variant={VARIANTS.MAIN} children='車種情報の入力' />
       </Link>
     </>
   )

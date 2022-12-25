@@ -2,12 +2,12 @@
 import CardHorizontal from '@components/CardHorizontal'
 
 // Assets
-import { user } from '@assets'
+import { userimg } from '@assets'
 
 const Menu = () => {
   return (
     <>
-      <CardHorizontal image={user} title='オーナー' description='ジーアイテック太郎' />
+      <CardHorizontal image={userimg} title='オーナー' description='ジーアイテック太郎' />
     </>
   )
 }

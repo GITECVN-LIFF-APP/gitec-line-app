@@ -16,7 +16,7 @@ const ReservationInformation = () => {
     const { isValid, errors } = validationService(service)
     if (isValid) {
       // Add data to db
-      axios.post('http://localhost:4000/services/add', service).then((res) => console.log(res.data))
+      axios.post('http://3.144.177.25:3000/service', service).then((res) => console.log(res.data))
     }
   }
 

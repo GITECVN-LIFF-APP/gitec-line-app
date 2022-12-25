@@ -1,5 +1,5 @@
 // Lib
-import { Formik } from 'formik'
+import { Formik, FormikValues, validateYupSchema } from 'formik'
 import { Link } from 'react-router-dom'
 
 // Components
@@ -12,12 +12,16 @@ import { VARIANTS } from '@enums'
 // Types
 import { IMember } from 'types/member'
 
-
 const initialValues: IMember = {
+  id: '',
+  lineId: '',
   name: '',
   furigana: '',
   address: '',
   phone: '',
+  email: '',
+  password: '',
+  role: false,
 }
 
 export type IContactFormProps = {
@@ -28,28 +32,28 @@ const MemberRegister = ({ onSubmit }: IContactFormProps) => {
   const validateForm = (values: IMember) => {
     const errors = {} as IMember
     if (!values.name) {
-      errors.name = 'Name is required'
+      errors.name = '名前を書いてください'
     } else if (values.name.length > 15) {
-      errors.name = 'Must be 15 characters or less'
+      errors.name = ''
     }
 
     if (!values.furigana) {
-      errors.furigana = 'Furigana is required'
+      errors.furigana = 'フリガナを書いてください'
     } else if (values.furigana.length > 15) {
-      errors.furigana = 'Furigana be 15 characters or less'
+      errors.furigana = ''
     }
 
     if (!values.address) {
-      errors.address = 'Address is required'
+      errors.address = '住所を書いてください'
     } else if (values.address.length > 15) {
-      errors.address = 'Address be 15 characters or less'
+      errors.address = ''
     }
 
-    if (!values.phone) {
-      errors.phone = 'Phone is required'
-    } else if (!/^(\d{2,4})\-(\d{2,4})\-(\d{4})/i.test(values.phone)) {
-      errors.phone = 'Phone must be format 0XXX-XX-XXXX'
-    }
+    // if (!values.phoneNumber) {
+    //   errors.phoneNumber = '電話番号を書いてください'
+    // } else if (!/^(\d{2,4})\-(\d{2,4})\-(\d{4})/i.test(values.phoneNumber)) {
+    //   errors.phoneNumber = ''
+    // }
 
     return errors
   }
@@ -100,9 +104,7 @@ const MemberRegister = ({ onSubmit }: IContactFormProps) => {
                 errorMessage={errors.phone}
               />
             </div>
-            <Link to={'/register-car'}>
             <Button variant={VARIANTS.MAIN} children='車種情報の入力' typeButton='submit' />
-            </Link>
           </form>
         </>
       )}

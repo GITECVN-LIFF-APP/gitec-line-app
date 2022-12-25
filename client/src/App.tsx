@@ -9,9 +9,6 @@ import NearBy from '@components/NearBy'
 
 // Pages
 import RegisTerCar from '@pages/registerCar'
-import Create from '@Test/Create'
-import Edit from '@Test/Edit'
-import Home from '@Test/Home'
 import Login from '@pages/login'
 import ConfirmInformation from '@pages/confirmInformation'
 import ReservationSuccess from '@pages/reservationSuccess'
@@ -28,21 +25,16 @@ import RegisterSuccessMember from '@pages/registerSuccess'
 // Contexts
 import ServiceProvider from '@contexts/serviceContext'
 
-
 function App() {
   return (
     <ServiceProvider>
       <Routes>
         <Route path='/' element={<Login />} />
-        <Route path='/update-info-member' element={<UpdateInfoMember />} />
-        <Route path='/create' element={<Create />} />
-        <Route path='/edit/:id' element={<Edit />} />
-        <Route path='/index' element={<Home />} />
+        <Route path='/update-info-member' element={<UpdateInfoMember />} />        
         <Route path='/register-car' element={<RegisTerCar />} />
         <Route path='/confirm-information' element={<ConfirmInformation />} />
         <Route path='/service' element={<Service />} />
         <Route path='service/reservation-success' element={<ReservationSuccess />} />
-        <Route path='/home' element={<Home />} />
         <Route path='/nearby' element={<NearBy />} />
         <Route path='/mypage' element={<MypageInfor />} />
         <Route path='service/oil-change' element={<GasStation />} />
@@ -51,7 +43,6 @@ function App() {
         <Route path='service/reservation-confirm' element={<ReservationInformation />} />
         <Route path='register-member' element={<RegisterMember />} />
         <Route path='/register-success' element={<RegisterSuccessMember />} />
-        
       </Routes>
     </ServiceProvider>
   )

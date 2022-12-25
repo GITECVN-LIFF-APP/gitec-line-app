@@ -1,0 +1,142 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "lineId":"",
+      "name":"Gitec",
+      "furigana": "Gitec",
+      "address": "Japan",
+      "phoneNumber": "088844666", 
+      "email": "admin@example.com",
+      "password": "$2a$10$MxpKD/rvp1VUUovgE6mHaugNv4Q5R6xOWS6dRxImPh9Sxq69.wt0G"      
+    }
+  ],
+  "service": [
+    {
+      "id": 1,
+      "name": "Maryse Goodwin",
+      "price": "1000"
+    },
+    {
+      "id": 2,
+      "name": "Maryse Goodwin",
+      "price": "1000"
+    }
+  ],
+  "gasStation": [
+    {
+      "id": 1,
+      "name": "Maryse Goodwin",
+      "address": "1000",
+      "phone": "0123"
+    },
+    {
+      "id": 2,
+      "name": "Maryse Goodwin",
+      "address": "1000",
+      "phone": "0123"
+    }
+  ],
+  "car": [
+    {
+      "id": 1,
+      "carCompany": "Maryse Goodwin",
+      "userId": 1,
+      "licensePlates": "0123",
+      "vehicles": "toyota",
+      "registrationDate": "2022-03-21T16:48:39.122Z"
+    },
+    {
+      "id": 2,
+      "carCompany": "Maryse Goodwin",
+      "userId": 1,
+      "licensePlates": "0123",
+      "vehicles": "toyota",
+      "registrationDate": "2022-03-21T16:48:39.122Z"
+    }
+  ],
+
+  "events": [
+    {
+      "id": 8,
+      "title": "Priority clean",
+      "start": "2022-03-21T16:48:39.122Z",
+      "end": "2022-03-21T16:48:39.122Z",
+      "allDay": true,     
+      "createAt": "2022-03-21T16:48:39.122Z",
+      "updatedAt": "2022-03-22T03:49:25.020Z",
+      "userId": 2,
+      "color": "yellow",
+      "carId": 1,
+      "gasStationId": 1
+    },
+    {
+      "id": 9,
+      "title": "Priority clean",
+      "start": "2022-03-21T16:48:39.122Z",
+      "end": "2022-03-21T16:48:39.122Z",
+      "allDay": true,
+      "createAt": "2022-03-21T16:48:39.122Z",
+      "updatedAt": "2022-03-22T03:49:25.020Z",
+      "userId": 2,
+      "color": "green",
+      "carId": 1,
+      "gasStationId": 1
+    },
+    {
+      "title": "test123",
+      "start": "2022-12-16T07:51",
+      "end": "2022-12-17T09:51",
+      "user_id": 1,
+      "allDay": false,      
+      "color": "blue",
+      "id": 2,
+      "carId": 1,
+      "gasStationId": 1
+    },
+    {
+      "title": "day off",
+      "userId": 1,
+      "start": "2022-12-17T09:00",
+      "end": "2022-12-19T21:00",
+      "allDay": true,      
+      "color": "blue",
+      "id": 11,
+      "carId": 1,
+      "gasStationId": 1
+    },
+    {
+      "title": "day off",
+      "userId": 1,
+      "start": "2022-12-17T09:00",
+      "end": "2022-12-19T21:00",
+      "allDay": true,      
+      "color": "blue",
+      "id": 12,
+      "carId": 1,
+      "gasStationId": 1
+    },
+    {
+      "title": "day off",
+      "userId": 1,
+      "start": "2022-12-17T09:00",
+      "end": "2022-12-19T21:00",
+      "allDay": true,      
+      "color": "blue",
+      "id": 13,
+      "carId": 1,
+      "gasStationId": 1
+    },
+    {
+      "title": "day off",
+      "userId": 1,
+      "start": "2022-12-17T09:00",
+      "end": "2022-12-19T21:00",
+      "allDay": true,      
+      "color": "blue",
+      "id": 14,
+      "carId": 1,
+      "gasStationId": 1
+    }
+  ]
+}

@@ -8,7 +8,7 @@ export type ServiceProps = {
   onGetNameService: (nameService: string) => void
 }
 
-const Service = ({ link, nameService, img, onGetNameService }: ServiceProps) => {
+const ServiceComponent = ({ link, nameService, img, onGetNameService }: ServiceProps) => {
   const handleGetNameService = () => {
     onGetNameService(nameService)
   }
@@ -24,4 +24,4 @@ const Service = ({ link, nameService, img, onGetNameService }: ServiceProps) => 
   )
 }
 
-export default Service
+export default ServiceComponent

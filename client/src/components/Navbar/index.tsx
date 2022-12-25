@@ -9,6 +9,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 
 // Assets
 import { calendar, homeIcon, nearBy, person, lineIcon, notosanjp } from '@assets'
+import liff from '@line/liff'
 
 interface NavbarProps {
   window?: () => Window
@@ -88,7 +89,9 @@ const Navbar = ({ window, children }: NavbarProps) => {
                     component={Link}
                     to={'/service'}
                   />
-                  <p className='service' style={{ color: 'white', marginLeft: '11px' }}>予約する</p>
+                  <p className='service' style={{ color: 'white', marginLeft: '11px' }}>
+                    予約する
+                  </p>
                 </Box>
                 <BottomNavigationAction
                   className='mypage'

@@ -61,7 +61,7 @@ const RegisterMember = () => {
         }
 
         axios
-          .post('http://localhost:5000/api/user', accountRegister)
+          .post('http://3.144.177.25:3000/users', accountRegister)
           .then((res) => console.log(res.data))
 
         // Loading indacator
