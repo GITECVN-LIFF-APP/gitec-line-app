@@ -19,7 +19,7 @@ export const validationService = (service: IService) => {
 
   result.errors = {
     idCustomer: '',
-    gasStation: '',
+    gasStation: undefined,
     nameService: '',
     pickDateTime: '',
     selectedCar: '',
@@ -29,9 +29,9 @@ export const validationService = (service: IService) => {
     result.errors.idCustomer = `Id customer + ${REQUIRED}`
   }
 
-  if (!isEmpty(service.gasStation)) {
-    result.errors.gasStation = `Gastation + ${REQUIRED}`
-  }
+  // if (!isEmpty(service.gasStation)) {
+  //   result.errors.gasStation = `Gastation + ${REQUIRED}`
+  // }
 
   if (!isEmpty(service.nameService)) {
     result.errors.nameService = `Name service + ${REQUIRED}`

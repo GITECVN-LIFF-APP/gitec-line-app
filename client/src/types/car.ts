@@ -6,3 +6,5 @@ export interface ICar {
   userId?: string 
   id?:string
 }
+
+// missing image

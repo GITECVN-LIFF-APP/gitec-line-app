@@ -1,6 +1,6 @@
 // Lib
 import { ChangeEvent, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 // Components
 import Button from '@components/Button'
@@ -12,31 +12,31 @@ import { fetcher } from '@constants/fetch'
 import useSWR from 'swr'
 
 export type GasStationProps = {
-  onGetGasStation: (gasStation: string) => void
+  onGetGasStation: (gasStation: IGasStation) => void
+  gasStations: IGasStation[] | undefined
+  gasStation: IGasStation | undefined
 }
 
-const GasStation = ({ onGetGasStation }: GasStationProps) => {
-  const { data: gasStations, error } = useSWR<IGasStation[]>(
-    'https://sandy-halved-pleasure.glitch.me/gasstation',
-    fetcher,
-  )
-
-  console.log(gasStations)
-  console.log(error)
-
-  if (!gasStations) return <h1>...loading</h1>
+const GasStation = ({ onGetGasStation, gasStations, gasStation }: GasStationProps) => {
+  const [isDisable, setIsDisable] = useState(true)
+  console.log('gasStation', gasStation)
 
   const handleGetGasStation = (e: ChangeEvent<HTMLSelectElement>) => {
-    const gasStation = e.target.value
-    onGetGasStation(gasStation)
-    console.log(gasStation + '1')
+    const getGas: IGasStation[] | undefined = gasStations?.filter(
+      (gasStation) => gasStation.id == e.target.value,
+    )
+    console.log('e.target', getGas)
+    if (e.target.value === '') {
+      setIsDisable(true)
+    } else {
+      setIsDisable(false)
+    }
+    getGas && onGetGasStation(getGas[0])
   }
-
-  // function disp(arr_gasStation: string | any[]) {
-  //   for (var i = 0; i < arr_gasStation.length; i++) {
-  //     console.log(arr_gasStation[i])
-  //   }
-  // }
+  const navigate = useNavigate()
+  const handleClick = () => {
+    navigate('/service/pick-date-time')
+  }
 
   const [listGasSation, setLisGasStation] = useState([])
 
@@ -58,9 +58,11 @@ const GasStation = ({ onGetGasStation }: GasStationProps) => {
       </select> */}
 
       <select onChange={handleGetGasStation} className='form-select' form-select-lg>
-        {gasStations.map((gasStation: IGasStation) => (
-          <option value={gasStation.name}>{gasStation.name}</option>
-        ))}
+        <option value=''>ガソリンスタンド を選んでください。</option>
+        {gasStations &&
+          gasStations.map((gasStation: IGasStation) => (
+            <option value={gasStation.id}>{gasStation.name}</option>
+          ))}
       </select>
 
       <div className='img-map'>
@@ -72,18 +74,23 @@ const GasStation = ({ onGetGasStation }: GasStationProps) => {
       </div>
       <div className='mb-5'>
         <h6 className='fw-semibold mb-3'>店舗名</h6>
+        <p>{gasStation && gasStation.name}</p>
       </div>
       <div className='mb-5'>
         <h6 className='fw-semibold mb-3'>住所</h6>
-        <p></p>
+        <p>{gasStation && gasStation.address}</p>
       </div>
       <div className='mb-5'>
         <h6 className='fw-semibold mb-3'>お電話番号</h6>
-        <p></p>
+        <p>{gasStation && gasStation.phone}</p>
       </div>
-      <Link to={'/service/pick-date-time'}>
-        <Button variant={VARIANTS.MAIN} children='日にち選択へ' />
-      </Link>
+
+      <Button
+        variant={VARIANTS.MAIN}
+        disabled={isDisable}
+        onClick={handleClick}
+        children='日にち選択へ'
+      />
     </>
   )
 }

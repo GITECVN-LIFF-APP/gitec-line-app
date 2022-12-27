@@ -9,12 +9,16 @@ import Button from '@components/Button'
 
 // Enums
 import { VARIANTS } from '@enums'
+import { ICar } from 'types/car'
 
 export type CarModalProps = {
   onGetCarSelectionId: (carSelectionId: string) => void
+  car: ICar
 }
 
-const CarModal = ({ onGetCarSelectionId }: CarModalProps) => {
+const CarModal = ({ onGetCarSelectionId, car }: CarModalProps) => {
+  console.log('carmodal ', car)
+
   const handleGetCarSelection = () => {
     onGetCarSelectionId('car01')
   }
@@ -29,8 +33,8 @@ const CarModal = ({ onGetCarSelectionId }: CarModalProps) => {
           <img src={carimg} className='img-fluid rounded-start' alt='...' />
         </div>
         <div className='col-8 d-flex align-items-center'>
-          <h5 className='card-title mx-3 fw-semibold'>トヨタ</h5>
-          <h5 className='card-title fw-semibold'>ルーミー</h5>
+          <h5 className='card-title mx-3 fw-semibold'>{car.carCompany}</h5>
+          <h5 className='card-title fw-semibold'>{car.vehicles}</h5>
         </div>
       </div>
       <Link to={'/service/reservation-confirm'}>

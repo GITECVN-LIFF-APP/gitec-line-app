@@ -4,6 +4,7 @@ import { createContext, ReactElement, useMemo, useState } from 'react'
 
 // Types
 import { IServiceContext } from 'types/serviceContext'
+import { IGasStation } from 'types/gasStation'
 
 export const ServiceContext = createContext<IServiceContext>({} as IServiceContext)
 
@@ -13,7 +14,7 @@ type UserProviderProps = {
 
 const ServiceProvider = ({ children }: UserProviderProps) => {
   const [nameService, setNameService] = useState<string>('')
-  const [gasStation, setGasStation] = useState<string>('')
+  const [gasStation, setGasStation] = useState<IGasStation>()
   const [pickDateTime, setPickDateTime] = useState<string>('')
   const [selectedCar, setSelectedCar] = useState<string>('')
   const [idCustomer, setIdCustomer] = useState<string>('')
@@ -36,8 +37,10 @@ const ServiceProvider = ({ children }: UserProviderProps) => {
 
   const value = useMemo(
     () => ({
+      gasStation,
       setNameService,
       setGasStation,
+      pickDateTime,
       setPickDateTime,
       setSelectedCar,
       setIdCustomer,

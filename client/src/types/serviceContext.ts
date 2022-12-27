@@ -1,4 +1,5 @@
 // Types
+import { IGasStation } from './gasStation'
 import { IService } from './service'
 
 export interface IServiceContext {
@@ -8,4 +9,5 @@ export interface IServiceContext {
   setSelectedCar: Function
   setIdCustomer: Function
   serviveObj: IService
+  gasStation:IGasStation | undefined
 }
