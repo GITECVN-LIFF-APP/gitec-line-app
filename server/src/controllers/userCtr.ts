@@ -5,11 +5,13 @@ import { UserModel } from "./../models/User.model";
 const userCtrl = {
   createUser: async (req: Request, res: Response) => {
     try {
+      console.log(req.body)
       const newUser = new UserModel({ ...req.body });
-
+      console.log(newUser)
       if (!newUser) return res.status(400).json({ msg: "Invalid data" });
-
+      console.log(newUser)      
       await newUser.save();
+      console.log(newUser)
       return res.status(200).json({ msg: { newUser } });
     } catch (error: any) {
       return res.status(500).json({ msg: error.message });

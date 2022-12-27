@@ -11,6 +11,7 @@ import { IserviceDB } from 'types/service'
 import useSWR from 'swr'
 import ServiceComponent from '@components/Service'
 import { fetcher } from '@constants/fetch'
+import { washCar } from '@assets'
 
 const Service = () => {
   const { setNameService, setIdCustomer } = useContext(ServiceContext)
@@ -20,11 +21,13 @@ const Service = () => {
     setNameService(nameService)
   }
 
-  const { data: services , error} = useSWR<IserviceDB[]>('https://sandy-halved-pleasure.glitch.me/service' , fetcher)
-  console.log(1)
+  const { data: services, error } = useSWR<IserviceDB[]>(
+    'https://sandy-halved-pleasure.glitch.me/service',
+    fetcher,
+  )
+
   console.log(services)
-  console.log(error);
-  
+  console.log(error)
 
   if (!services) return <h1>...loading</h1>
 
@@ -32,21 +35,23 @@ const Service = () => {
     <>
       <Header />
       <div className='container mt-3'>
-      <>
-      <div>
-        <h2>各種予約</h2>
-        {services.map((service:IserviceDB)=>{
-          <ServiceComponent
-            key={service.id}
-            onGetNameService={handleGetNameService}
-            img={service.image}
-            link={service.link}
-            nameService={service.name}
-          />
-        })}
-       
-      </div>
-    </>
+        <>
+          <div>
+            <h2>各種予約</h2>
+
+            {services &&
+              services.map((service: IserviceDB) => (
+                <ServiceComponent
+                  key={service.id}
+                  onGetNameService={handleGetNameService}
+                  source={service.source}
+                  link={service.link}
+                  nameService={service.name}
+                  img={service.image}
+                />
+              ))}
+          </div>
+        </>
       </div>
       <Navbar />
     </>

@@ -9,7 +9,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 
 // Assets
 import { calendar, homeIcon, nearBy, person, lineIcon, notosanjp } from '@assets'
-import liff from '@line/liff'
+import liff from '@line/liff/dist/lib'
+
 
 interface NavbarProps {
   window?: () => Window
@@ -105,7 +106,7 @@ const Navbar = ({ window, children }: NavbarProps) => {
                   label='LINEへ戻る'
                   icon={<img src={lineIcon} />}
                   component={Link}
-                  to={'/'}
+                  to={'/'}                  
                 />
               </BottomNavigation>
             </Box>

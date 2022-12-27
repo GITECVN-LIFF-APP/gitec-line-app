@@ -123,7 +123,7 @@ const MyPage = () => {
             <img src={userimg} />
             <div className='profileinfo'>
               <div className='d-flex align-items-center'>
-                <h5 className='card-title fw-semibold'>ジーアイテック太郎</h5>
+                <h5 className='card-title fw-semibold'></h5>
               </div>
             </div>
           </div>

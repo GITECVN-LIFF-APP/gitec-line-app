@@ -11,5 +11,6 @@ export interface IserviceDB{
   name: string
   image: string
   link: string
+  source: string
   price: string 
 }

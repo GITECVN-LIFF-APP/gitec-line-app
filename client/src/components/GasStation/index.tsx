@@ -1,5 +1,5 @@
 // Lib
-import { ChangeEvent } from 'react'
+import { ChangeEvent, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 // Components
@@ -7,16 +7,38 @@ import Button from '@components/Button'
 
 // Enums
 import { VARIANTS } from '@enums'
+import { IGasStation } from 'types/gasStation'
+import { fetcher } from '@constants/fetch'
+import useSWR from 'swr'
 
 export type GasStationProps = {
   onGetGasStation: (gasStation: string) => void
 }
 
 const GasStation = ({ onGetGasStation }: GasStationProps) => {
+  const { data: gasStations, error } = useSWR<IGasStation[]>(
+    'https://sandy-halved-pleasure.glitch.me/gasstation',
+    fetcher,
+  )
+
+  console.log(gasStations)
+  console.log(error)
+
+  if (!gasStations) return <h1>...loading</h1>
+
   const handleGetGasStation = (e: ChangeEvent<HTMLSelectElement>) => {
     const gasStation = e.target.value
     onGetGasStation(gasStation)
+    console.log(gasStation + '1')
   }
+
+  // function disp(arr_gasStation: string | any[]) {
+  //   for (var i = 0; i < arr_gasStation.length; i++) {
+  //     console.log(arr_gasStation[i])
+  //   }
+  // }
+
+  const [listGasSation, setLisGasStation] = useState([])
 
   return (
     <>
@@ -25,7 +47,7 @@ const GasStation = ({ onGetGasStation }: GasStationProps) => {
         <h3 className='fw-bold'>STEP1 </h3>
         <p className='fw-bold mb-4'>店舗を選ぶ</p>
       </div>
-      <select onChange={handleGetGasStation} className='form-select' form-select-lg>
+      {/* <select onChange={handleGetGasStation} className='form-select' form-select-lg>
         <option selected>ナナヨウ類家SS</option>
         <option value='セルフ類家サービスステーション'>セルフ類家サービスステーション</option>
         <option value='セルフ旭ヶ丘サービスステーション'>セルフ旭ヶ丘サービスステーション</option>
@@ -33,7 +55,14 @@ const GasStation = ({ onGetGasStation }: GasStationProps) => {
         <option value='江陽サービスステーション'>江陽サービスステーション</option>
         <option value='青葉サービスステーション'>青葉サービスステーション</option>
         <option value='浜市川サービスステーション'>浜市川サービスステーション</option>
+      </select> */}
+
+      <select onChange={handleGetGasStation} className='form-select' form-select-lg>
+        {gasStations.map((gasStation: IGasStation) => (
+          <option value={gasStation.name}>{gasStation.name}</option>
+        ))}
       </select>
+
       <div className='img-map'>
         <iframe
           src='https://www.google.com/maps/d/u/3/embed?mid=1tramBw8INl9P28RTJoBTywejp9MYyiM&ehbc=2E312F'
@@ -43,15 +72,14 @@ const GasStation = ({ onGetGasStation }: GasStationProps) => {
       </div>
       <div className='mb-5'>
         <h6 className='fw-semibold mb-3'>店舗名</h6>
-        <p>ナナヨウ類家SS</p>
       </div>
       <div className='mb-5'>
         <h6 className='fw-semibold mb-3'>住所</h6>
-        <p>八戸市類家5丁目10-2</p>
+        <p></p>
       </div>
       <div className='mb-5'>
         <h6 className='fw-semibold mb-3'>お電話番号</h6>
-        <p>0000-00-0000</p>
+        <p></p>
       </div>
       <Link to={'/service/pick-date-time'}>
         <Button variant={VARIANTS.MAIN} children='日にち選択へ' />

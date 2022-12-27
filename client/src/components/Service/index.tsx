@@ -5,10 +5,11 @@ export type ServiceProps = {
   link: string
   nameService: string
   img: string
+  source:string
   onGetNameService: (nameService: string) => void
 }
 
-const ServiceComponent = ({ link, nameService, img, onGetNameService }: ServiceProps) => {
+const ServiceComponent = ({ link, nameService, source, onGetNameService }: ServiceProps) => {
   const handleGetNameService = () => {
     onGetNameService(nameService)
   }
@@ -18,7 +19,7 @@ const ServiceComponent = ({ link, nameService, img, onGetNameService }: ServiceP
         <div className='text'>
           <a className='label text-decoration-none'>{nameService}</a>
         </div>
-        <img className='icon' src={img} />
+        <img className='icon' src={source} />
       </div>
     </Link>
   )

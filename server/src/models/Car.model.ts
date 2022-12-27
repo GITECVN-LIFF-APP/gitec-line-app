@@ -10,10 +10,10 @@ const CarSchema = new Schema({
   },
   licensePlate: {
     type: String
-  },
-  userId: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
   }
+  // userId: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'User'
+  // }
 })
 export const CarModel = model<ICar>('Car', CarSchema)

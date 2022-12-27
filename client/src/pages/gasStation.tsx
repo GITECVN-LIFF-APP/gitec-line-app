@@ -7,8 +7,13 @@ import Header from '@components/Header'
 
 // Contexts
 import { ServiceContext } from '@contexts/serviceContext'
+import { fetcher } from '@constants/fetch'
+import useSWR from 'swr'
+import { IGasStation } from 'types/gasStation'
 
 const GasStationPage = () => {
+  
+
   const { setGasStation } = useContext(ServiceContext)
 
   const handleGetGasStation = (gasStation: string) => {

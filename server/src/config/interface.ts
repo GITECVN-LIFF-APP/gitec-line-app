@@ -1,6 +1,6 @@
-import { Document } from 'mongoose'
+import { Document, Schema } from 'mongoose'
 
-export interface IUser extends Document {
+export interface IUser extends Schema {
   userId: string
   name: string
   furigana: string
@@ -36,7 +36,7 @@ export interface ICar extends Document {
   nameCar: string
   typeCar: string
   licensePlate: string
-  userId: string
+  // userId: string
   _doc: Object
 }
 
