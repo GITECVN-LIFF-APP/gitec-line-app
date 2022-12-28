@@ -14,49 +14,49 @@ const isEmpty = (value: string | number): boolean => {
   return !!value
 }
 
-export const validationService = (service: IService) => {
-  const result: IValidationResult = { isValid: true }
+// export const validationService = (service: IService) => {
+//   const result: IValidationResult = { isValid: true }
 
-  result.errors = {
-    idCustomer: '',
-    gasStation: undefined,
-    nameService: '',
-    pickDateTime: '',
-    selectedCar: '',
-  }
+//   result.errors = {
+//     idCustomer: '',
+//     gasStation: undefined,
+//     nameService: '',
+//     pickDateTime: '',
+//     selectedCar: '',
+//   }
 
-  if (!isEmpty(service.idCustomer)) {
-    result.errors.idCustomer = `Id customer + ${REQUIRED}`
-  }
+//   if (!isEmpty(service.idCustomer)) {
+//     result.errors.idCustomer = `Id customer + ${REQUIRED}`
+//   }
 
-  // if (!isEmpty(service.gasStation)) {
-  //   result.errors.gasStation = `Gastation + ${REQUIRED}`
-  // }
+//   // if (!isEmpty(service.gasStation)) {
+//   //   result.errors.gasStation = `Gastation + ${REQUIRED}`
+//   // }
 
-  if (!isEmpty(service.nameService)) {
-    result.errors.nameService = `Name service + ${REQUIRED}`
-  }
+//   if (!isEmpty(service.nameService)) {
+//     result.errors.nameService = `Name service + ${REQUIRED}`
+//   }
 
-  if (!isEmpty(service.pickDateTime)) {
-    result.errors.pickDateTime = `Pick date time + ${REQUIRED}`
-  }
+//   if (!isEmpty(service.pickDateTime)) {
+//     result.errors.pickDateTime = `Pick date time + ${REQUIRED}`
+//   }
 
-  if (!isEmpty(service.selectedCar)) {
-    result.errors.selectedCar = `Selected car + ${REQUIRED}`
-  }
+//   if (!isEmpty(service.selectedCar)) {
+//     result.errors.selectedCar = `Selected car + ${REQUIRED}`
+//   }
 
-  // Result
-  const validate = result.errors
+//   // Result
+//   const validate = result.errors
 
-  if (
-    validate.idCustomer ||
-    validate.gasStation ||
-    validate.nameService ||
-    validate.pickDateTime ||
-    validate.selectedCar
-  ) {
-    result.isValid = false
-  }
+//   if (
+//     validate.idCustomer ||
+//     validate.gasStation ||
+//     validate.nameService ||
+//     validate.pickDateTime ||
+//     validate.selectedCar
+//   ) {
+//     result.isValid = false
+//   }
 
-  return result
-}
+//   return result
+// }

@@ -5,6 +5,8 @@ import { createContext, ReactElement, useMemo, useState } from 'react'
 // Types
 import { IServiceContext } from 'types/serviceContext'
 import { IGasStation } from 'types/gasStation'
+import { ICar } from 'types/car'
+import { IEvent } from 'types/events'
 
 export const ServiceContext = createContext<IServiceContext>({} as IServiceContext)
 
@@ -14,12 +16,10 @@ type UserProviderProps = {
 
 const ServiceProvider = ({ children }: UserProviderProps) => {
   const [nameService, setNameService] = useState<string>('')
-  const [gasStation, setGasStation] = useState<IGasStation>()
-  const [pickDateTime, setPickDateTime] = useState<string>('')
-  const [selectedCar, setSelectedCar] = useState<string>('')
+  const [gasStation, setGasStation] = useState<IGasStation>({} as IGasStation)
+  const [pickDateTime, setPickDateTime] = useState<IEvent>({} as IEvent)
+  const [selectedCar, setSelectedCar] = useState<ICar>({} as ICar)
   const [idCustomer, setIdCustomer] = useState<string>('')
-
-  // setNameService(nameService, ...nameService)
 
   const serviveObj: IService = {
     nameService,
@@ -32,8 +32,6 @@ const ServiceProvider = ({ children }: UserProviderProps) => {
   if (nameService !== '') {
     localStorage.setItem('service', JSON.stringify(serviveObj))
   }
-
-  // console.log(serviveObj, 'serviveObj 12345')
 
   const value = useMemo(
     () => ({

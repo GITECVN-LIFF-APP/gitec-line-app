@@ -6,17 +6,24 @@ import Header from '@components/Header'
 import ReservationInfor from '@components/ReservationInformation'
 
 // Helpers
-import { validationService } from '@helpers/validationService'
+// import { validationService } from '@helpers/validationService'
+
+// Types
+import { IMember } from 'types/member'
 
 const ReservationInformation = () => {
-  const handleAddService = () => {
-    const service = JSON.parse(localStorage.getItem('service')|| '{}')
+  // Service local storage
+  const service = JSON.parse(localStorage.getItem('service') || '{}')
 
+  // User session local storage
+  const user: IMember = JSON.parse(localStorage.getItem('userSession') || 'null')
+
+  const handleAddService = () => {
     // Validation service
     const { isValid, errors } = validationService(service)
     if (isValid) {
       // Add data to db
-      axios.post('http://3.144.177.25:3000/service', service).then((res) => console.log(res.data))
+      axios.post('https://sandy-halved-pleasure.glitch.me/reservation', service).then((res) => console.log(res.data))
     }
   }
 
@@ -24,10 +31,14 @@ const ReservationInformation = () => {
     <>
       <Header />
       <div className='container mt-3 mb-3'>
-        <ReservationInfor onAddService={handleAddService} />
+        <ReservationInfor user={user} services={service} onAddService={handleAddService} />
       </div>
     </>
   )
 }
 
 export default ReservationInformation
+
+function validationService(service: any): { isValid: any; errors: any } {
+  throw new Error('Function not implemented.')
+}

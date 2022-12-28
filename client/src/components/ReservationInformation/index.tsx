@@ -14,14 +14,28 @@ import { userimg, carimg } from '@assets'
 // Helpers
 import { clearLocalStorage } from '@helpers/clearLocalStorage'
 
+// Types
+import { IService } from 'types/service'
+import { IMember } from 'types/member'
+
 export type ReservationInformationProps = {
   onAddService: () => void
+  services: IService
+  user: IMember
 }
 
-const ReservationInformation = ({ onAddService }: ReservationInformationProps) => {
+const ReservationInformation = ({ onAddService, services, user }: ReservationInformationProps) => {
   const handleClearLocalStorage = () => {
     clearLocalStorage('service')
   }
+
+  const { carCompany, vehicles } = services.selectedCar
+
+  const { name, phone, address } = services.gasStation
+
+  const calendar = services.pickDateTime.start
+
+  const { name: nameUser, furigana } = user
 
   return (
     <div className='container'>
@@ -30,32 +44,36 @@ const ReservationInformation = ({ onAddService }: ReservationInformationProps) =
         <p className='fw-bold mb-4'>予約内容確認</p>
       </div>
       <div className='container'>
-        <CardHorizontal image={userimg} title='オーナー' description='ジーアイテック太郎' />
+        <CardHorizontal
+          image={userimg}
+          title={nameUser ? nameUser : ''}
+          description={furigana ? furigana : ''}
+        />
       </div>
       <div className='mt-5'>
         <p className='fw-bold mb-4'>点検車種</p>
       </div>
       <div className='container'>
-        <CardHorizontal image={carimg} title='トヨタ  ルーミー' description={''} />
+        <CardHorizontal image={carimg} title={`${carCompany} ${vehicles}`} description={''} />
       </div>
       <div className='mt-5'>
         <p className='fw-bold mb-5'>予約内容詳細</p>
       </div>
       <div className='mb-5'>
         <h6 className='fw-semibold mb-3'>店舗名</h6>
-        <p>ナナヨウ類家SS</p>
+        <p>{name}</p>
       </div>
       <div className='mb-5'>
         <h6 className='fw-semibold mb-3'>住所</h6>
-        <p>八戸市類家5丁目10-2</p>
+        <p>{address}</p>
       </div>
       <div className='mb-5'>
         <h6 className='fw-semibold mb-3'>お電話番号</h6>
-        <p>0000-00-0000</p>
+        <p>{phone}</p>
       </div>
       <div className='mb-5'>
         <h6 className='fw-semibold mb-3'>ご希望の日時</h6>
-        <p>10月9日（日）　16:00〜17:00</p>
+        <p>{calendar}</p>
       </div>
       <div className='container'>
         <div className='row mb-5'>
