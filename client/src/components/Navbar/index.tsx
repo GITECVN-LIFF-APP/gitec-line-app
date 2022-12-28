@@ -11,7 +11,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 import { calendar, homeIcon, nearBy, person, lineIcon, notosanjp } from '@assets'
 import liff from '@line/liff/dist/lib'
 
-
 interface NavbarProps {
   window?: () => Window
   children?: React.ReactElement
@@ -63,6 +62,8 @@ const Navbar = ({ window, children }: NavbarProps) => {
     )
   }
 
+  
+
   return (
     <HideOnScroll>
       <ThemeProvider theme={theme}>
@@ -102,11 +103,12 @@ const Navbar = ({ window, children }: NavbarProps) => {
                   to={'/mypage'}
                 />
                 <BottomNavigationAction
+                  onClick={() => liff.closeWindow()}
                   className='exit'
                   label='LINEへ戻る'
                   icon={<img src={lineIcon} />}
                   component={Link}
-                  to={'/'}                  
+                  to={'/'}
                 />
               </BottomNavigation>
             </Box>
