@@ -1,10 +1,12 @@
+import { ICar } from './car'
+import { IEvent } from './events'
 import { IGasStation } from './gasStation'
 
 export interface IService {
   nameService: string
-  gasStation: IGasStation | undefined
-  pickDateTime: string
-  selectedCar: string
+  gasStation: IGasStation
+  pickDateTime: IEvent
+  selectedCar: ICar
   idCustomer: string
 }
 

@@ -9,5 +9,5 @@ export interface IServiceContext {
   setSelectedCar: Function
   setIdCustomer: Function
   serviveObj: IService
-  gasStation:IGasStation | undefined
+  gasStation:IGasStation
 }
