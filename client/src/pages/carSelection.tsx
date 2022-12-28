@@ -1,5 +1,5 @@
 // Lib
-import { useContext } from 'react'
+import { useCallback, useContext, useEffect, useState } from 'react'
 
 // Components
 import CarModal from '@components/CarModal'
@@ -13,19 +13,23 @@ import { ICar } from 'types/car'
 import { IMember } from 'types/member'
 
 const CarSelection = () => {
+  const [listCar, setListCar] = useState<ICar[]>()
+
   const userSestion: IMember = JSON.parse(localStorage.getItem('userSession') || 'null')
 
   // const userId = userSestion && userSestion.lineId
   const userId = 'U33da544286a27dc45a6369fd63a0a30a'
 
-  console.log(userId)
-
   const { data: cars, error } = useSWR<ICar[]>(
-    userId && `https://sandy-halved-pleasure.glitch.me/car?userId=${userId}`,
+    `https://sandy-halved-pleasure.glitch.me/car?userId=${userId}`,
     fetcher,
   )
 
-  console.log(cars)
+  useEffect(() => {
+    if (cars) {
+      setListCar(cars)
+    }
+  }, [cars])
 
   const { setSelectedCar } = useContext(ServiceContext)
 
@@ -37,10 +41,7 @@ const CarSelection = () => {
     <>
       <Header />
       <div className='container mt-3 mb-3'>
-        {cars &&
-          cars.map((car: ICar) => {
-            <CarModal car={car} onGetCarSelectionId={handleGetCarSelection} />
-          })}
+        {listCar && <CarModal listCar={listCar} onGetCarSelectionId={handleGetCarSelection} />}
       </div>
     </>
   )
