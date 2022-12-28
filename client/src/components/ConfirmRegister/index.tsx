@@ -16,7 +16,6 @@ const ConfirmRegister = () => {
   const user:IMember=JSON.parse(
     localStorage.getItem('userSession') || 'null'
   );
-  
   const { data: car } = useSWR<ICar[]>(
     'https://sandy-halved-pleasure.glitch.me/car?userId=' + user.id,
     fetcher,

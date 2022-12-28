@@ -12,13 +12,13 @@ import { VARIANTS } from '@enums'
 import { ICar } from 'types/car'
 
 export type CarModalProps = {
-  onGetCarSelected: (carSelected: ICar) => void
+  onGetCarSelectionId: (carSelectionId: string) => void
   listCar: ICar[]
 }
 
-const CarModal = ({ onGetCarSelected, listCar }: CarModalProps) => {
-  const handleGetCarSelected = (car: ICar) => {
-    onGetCarSelected(car)
+const CarModal = ({ onGetCarSelectionId, listCar }: CarModalProps) => {
+  const handleGetCarSelection = () => {
+    onGetCarSelectionId('car01')
   }
 
   return (
@@ -27,7 +27,7 @@ const CarModal = ({ onGetCarSelected, listCar }: CarModalProps) => {
       <h3 className='fw-bold'>STEP3 </h3>
       <p className='fw-bold mb-4'>車種を選ぶ</p>
       {listCar.map((car: ICar) => (
-        <div className='row card-horizontal mb-4' onClick={() => handleGetCarSelected(car)}>
+        <div className='row card-horizontal mb-4'>
           <div className='p-2 col-3 ms-3'>
             <img src={carimg} className='img-fluid rounded-start' alt='...' />
           </div>
@@ -39,7 +39,7 @@ const CarModal = ({ onGetCarSelected, listCar }: CarModalProps) => {
       ))}
 
       <Link to={'/service/reservation-confirm'}>
-        <Button variant={VARIANTS.MAIN} children='車種情報の入力' />
+        <Button onClick={handleGetCarSelection} variant={VARIANTS.MAIN} children='車種情報の入力' />
       </Link>
     </>
   )

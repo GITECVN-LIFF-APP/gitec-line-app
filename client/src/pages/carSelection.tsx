@@ -1,5 +1,5 @@
 // Lib
-import { useContext, useEffect, useState } from 'react'
+import { useCallback, useContext, useEffect, useState } from 'react'
 
 // Components
 import CarModal from '@components/CarModal'
@@ -33,15 +33,15 @@ const CarSelection = () => {
 
   const { setSelectedCar } = useContext(ServiceContext)
 
-  const handleGetCarSelected = (carSelected: ICar) => {
-    setSelectedCar(carSelected)
+  const handleGetCarSelection = (carSelectionId: string) => {
+    setSelectedCar(carSelectionId)
   }
 
   return (
     <>
       <Header />
       <div className='container mt-3 mb-3'>
-        {listCar && <CarModal listCar={listCar} onGetCarSelected={handleGetCarSelected} />}
+        {listCar && <CarModal listCar={listCar} onGetCarSelectionId={handleGetCarSelection} />}
       </div>
     </>
   )
