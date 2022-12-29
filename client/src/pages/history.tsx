@@ -4,6 +4,8 @@ import Header from '@components/Header'
 import History from '@components/History'
 import HistoryInformation from '@components/HistoryInfomation'
 import useSWR from 'swr'
+import { fetcher } from '@constants/fetch'
+import { IserviceDB } from 'types/service'
 
 
 const Home = () => {
