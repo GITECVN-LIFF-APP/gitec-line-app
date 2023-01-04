@@ -18,6 +18,7 @@
 @import url('../components/CardHorizontal/style.css');
 @import url('../components/GasStation/style.css');
 @import url('../components/MyPage/style.css');
+@import url('../components/MemberRegister/style.css');
 
 /* COMMON STYLE */
 .btn-login {
@@ -48,4 +49,15 @@
   display: flex;
   justify-content: end;
   flex-direction: column;
+}
+
+body,
+html {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+p,
+a {
+  font-family: 'Noto Sans JP';
+  font-weight: 100;
 }

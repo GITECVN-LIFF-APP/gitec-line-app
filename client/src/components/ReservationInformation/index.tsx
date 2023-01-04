@@ -26,8 +26,15 @@ export type ReservationInformationProps = {
 
 const ReservationInformation = ({ onAddService, services, user }: ReservationInformationProps) => {
   const handleClearLocalStorage = () => {
+    console.log(services + "Hello");
+    
     clearLocalStorage('service')
   }
+  
+  // const navigate = useNavigate()
+  // const handleClick = () => {
+  //   navigate('/service/reservation-success')
+  // }
 
   const { carCompany, vehicles } = services.selectedCar
 

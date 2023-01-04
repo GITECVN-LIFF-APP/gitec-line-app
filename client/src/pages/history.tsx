@@ -10,7 +10,7 @@ import { IserviceDB } from 'types/service'
 
 const Home = () => {
     const { data: services, error } = useSWR<IserviceDB[]>(
-        'https://sandy-halved-pleasure.glitch.me/service',
+        'https://sandy-halved-pleasure.glitch.me/reservation',
         fetcher,
       )
 

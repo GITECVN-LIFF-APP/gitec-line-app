@@ -26,7 +26,7 @@ const RegisterSuccess = () => {
       <Link to={'/mypage'}>
         <Button
           onClick={handleClearLocalStorage}
-          size={SIZES.LARGE}
+          size={SIZES.MEDIUM}
           variant={VARIANTS.MAIN}
           children='マイページ'
         />
