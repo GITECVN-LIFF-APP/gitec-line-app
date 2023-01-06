@@ -17,7 +17,7 @@ const RegisterSuccess = () => {
 
   return (
     <>
-      <h2 className='fw-bold mb-5'>登録完了</h2>
+      <h1 className='fw-bold mb-5'>登録完了</h1>
       <h6 className='mb-5 fs-6 fw-bolder'>登録完了しました！</h6>
       <p className='mb-5 me-5'>
         ご協力ありがとうございます！ GITEC LINE APPの各種機能が利用可能になりました。

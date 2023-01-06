@@ -27,7 +27,7 @@ const Reservation = () => {
       <Link to={'/service'}>
         <Button
           onClick={handleClearLocalStorage}
-          size={SIZES.LARGE}
+          size={SIZES.MEDIUM}
           variant={VARIANTS.MAIN}
           children='ホームへ戻る'
         />

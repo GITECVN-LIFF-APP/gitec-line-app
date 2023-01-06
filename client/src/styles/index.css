@@ -54,10 +54,27 @@
 body,
 html {
   font-family: 'Noto Sans JP', sans-serif;
+  color: #000000;
 }
 
 p,
 a {
   font-family: 'Noto Sans JP';
   font-weight: 100;
+}
+
+@media screen and (max-width: 600px) {
+  h6,
+  p,
+  a {
+    font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1200 - 300)));
+  }
+}
+
+@media screen and (min-width: 601px) {
+  h6,
+  p,
+  a {
+    font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1200 - 300)));
+  }
 }

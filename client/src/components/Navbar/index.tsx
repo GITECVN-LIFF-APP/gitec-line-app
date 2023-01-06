@@ -91,9 +91,9 @@ const Navbar = ({ window, children }: NavbarProps) => {
                     component={Link}
                     to={'/service'}
                   />
-                  <p className='service' style={{ color: 'white', marginLeft: '11px' }}>
+                  <label className='service' style={{ color: 'white', marginLeft: '11px' }}>
                     予約する
-                  </p>
+                  </label>
                 </Box>
                 <BottomNavigationAction
                   className='mypage'

@@ -47,7 +47,7 @@ const ReservationInformation = ({ onAddService, services, user }: ReservationInf
   return (
     <div className='container'>
       <div>
-        <h2 className='fw-bold mb-5'>オイル交換予約</h2>
+        <h1 className='fw-bold mb-5'>オイル交換予約</h1>
         <p className='fw-bold mb-4'>予約内容確認</p>
       </div>
       <div className='container'>

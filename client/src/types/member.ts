@@ -8,4 +8,5 @@ export interface IMember {
   email?: string
   password?:string
   role?: boolean
+  pictureUrl?: string
 }

@@ -62,7 +62,7 @@ const MemberRegister = ({ onSubmit }: IContactFormProps) => {
     <Formik initialValues={initialValues} validate={validateForm} onSubmit={onSubmit}>
       {({ errors, handleSubmit, handleChange }) => (
         <>
-          <h2 className='fw-bold mb-5'>会員情報登録</h2>
+          <h1 className='fw-bold mb-5'>会員情報登録</h1>
           <form onSubmit={handleSubmit}>
             <div className='mb-4'>
               <Input

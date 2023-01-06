@@ -23,9 +23,9 @@ const CarModal = ({ onGetCarSelected, listCar }: CarModalProps) => {
 
   return (
     <>
-      <h2 className='fw-bold mb-5'>オイル交換予約</h2>
+      <h1 className='fw-bold mb-5'>オイル交換予約</h1>
       <h3 className='fw-bold'>STEP3 </h3>
-      <p className='fw-bold mb-4'>車種を選ぶ</p>
+      <h3 className='fw-bold mb-4'>車種を選ぶ</h3>
       {listCar.map((car: ICar) => (
         <div className='row card-horizontal mb-4' onClick={() => handleGetCarSelected(car)}>
           <div className='p-2 col-3 ms-3'>

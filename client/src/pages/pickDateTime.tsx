@@ -51,16 +51,16 @@ const PickDateTime = () => {
     setPickDateTime(newObject)
   }
 
-  if (!events) return <h1>...loading</h1>
+  if (!events) return <h1>処理中</h1>
   return (
     <>
       <Header />
       <div className='container mt-3 mb-3'>
         <>
           <div>
-            <h2 className='fw-bold mb-5'>オイル交換予約</h2>
+            <h1 className='fw-bold mb-5'>オイル交換予約</h1>
             <h3 className='fw-bold'>STEP2</h3>
-            <p className='fw-bold mb-4'>日にちを選ぶ</p>
+            <h3 className='fw-bold mb-4'>日にちを選ぶ</h3>
           </div>
           <FullCalendar
             // defaultView="timeGridWeek"

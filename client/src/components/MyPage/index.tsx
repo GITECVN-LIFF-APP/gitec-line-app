@@ -25,8 +25,7 @@ const MyPage = () => {
     'https://sandy-halved-pleasure.glitch.me/car?userId=' + userLocal.id,
     fetcher,
   )
-  console.log('mypage',user,car);
-  
+  console.log('mypage', user, car)
 
   const [isMyCar, setIsMycar] = useState<boolean>(false)
 
@@ -34,14 +33,14 @@ const MyPage = () => {
     setIsMycar(!isMyCar)
   }
 
-  if (!user) return  <h1>...loading</h1>;
-  if (!car) return <h1>...loading</h1>;
+  if (!user) return <h1>処理中</h1>
+  if (!car) return <h1>処理中</h1>
   const renderButton = () => {
     return (
       <>
         <div className='container'>
           <div className='row'>
-            <div className='col'>
+            <div className='col text-center'>
               <Button
                 className='button-mypage'
                 size={SIZES.SMALL}
@@ -50,7 +49,7 @@ const MyPage = () => {
                 onClick={handleClick}
               />
             </div>
-            <div className='col'>
+            <div className='col text-center'>
               <Button
                 className='button-mypage'
                 size={SIZES.SMALL}
@@ -68,8 +67,10 @@ const MyPage = () => {
   const renderCar = () => {
     return (
       <>
-        <h2 className='fw-bold mb-5'>マイページ</h2>
-        <div className='row mb-2'>{renderButton()}</div>
+        <h1 className='fw-bold mb-5'>マイページ</h1>
+        <div className='container'>
+          <div className='row mb-2'>{renderButton()}</div>
+        </div>
         <div className='row mb-5'>
           <div className='p-2 col-3 ms-3'>
             <img src={carimg} className='img-fluid rounded-start' alt='...' />
@@ -91,7 +92,7 @@ const MyPage = () => {
         </div>
         <div className='container'>
           <div className='row mb-2'>
-            <div className='col'>
+            <div className='col text-center'>
               <Button
                 className='button-mypage'
                 size={SIZES.SMALL}
@@ -99,7 +100,7 @@ const MyPage = () => {
                 children='車種情報を編集する'
               />
             </div>
-            <div className='col'>
+            <div className='col text-center'>
               <Button
                 className='button-mypage'
                 size={SIZES.SMALL}
@@ -116,11 +117,13 @@ const MyPage = () => {
   const renderMember = () => {
     return (
       <>
-        <h2 className='fw-bold mb-5'>マイページ</h2>
-        <div className='row mb-2'>{renderButton()}</div>
+        <h1 className='fw-bold mb-5'>マイページ</h1>
+        <div className='container'>
+          <div className='row mb-2'>{renderButton()}</div>
+        </div>
         <div className='row mb-5'>
           <div className='firstinfo'>
-            <img src={userimg} />
+            <img src={user.pictureUrl} />
             <div className='profileinfo'>
               <div className='d-flex align-items-center'>
                 <h5 className='card-title fw-semibold'></h5>
@@ -148,7 +151,7 @@ const MyPage = () => {
         </div>
         <div className='container'>
           <div className='row mb-4'>
-            <div className='col'>
+            <div className='col text-center'>
               <Button
                 className='button-mypage'
                 size={SIZES.SMALL}
@@ -156,7 +159,7 @@ const MyPage = () => {
                 children='会員情報を編集する'
               />
             </div>
-            <div className='col'>
+            <div className='col text-center'>
               <Button
                 className='button-mypage'
                 size={SIZES.SMALL}
@@ -167,7 +170,7 @@ const MyPage = () => {
           </div>
         </div>
         <div className='container'>
-          <div className='row mb-5'>
+          <div className='col text-center'>
             <Button
               className='button-mypage-confirm'
               size={SIZES.SMALL}

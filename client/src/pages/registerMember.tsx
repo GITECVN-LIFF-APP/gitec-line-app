@@ -124,7 +124,7 @@ const RegisterMember = () => {
                             role='status'
                             aria-hidden='true'
                           ></span>
-                          Loading...
+                          処理中
                         </button>
                       ) : (
                         <button

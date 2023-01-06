@@ -43,9 +43,9 @@ const GasStation = ({ onGetGasStation, gasStations, gasStation }: GasStationProp
   return (
     <>
       <div className='container-member'>
-        <h2 className='fw-bold mb-5'>オイル交換予約</h2>
+        <h1 className='fw-bold mb-5'>オイル交換予約</h1>
         <h3 className='fw-bold'>STEP1 </h3>
-        <p className='fw-bold mb-4'>店舗を選ぶ</p>
+        <h3 className='fw-bold mb-4'>店舗を選ぶ</h3>
       </div>
       {/* <select onChange={handleGetGasStation} className='form-select' form-select-lg>
         <option selected>ナナヨウ類家SS</option>

@@ -4,31 +4,37 @@
   color: var(--white);
   background-color: var(--halloween-orange);
   font-family: 'Noto Sans JP', sans-serif;
+  height: 47px;
 }
 
 .btn-main:hover {
   background-color: var(--white);
   color: var(--halloween-orange);
   border-color: var(--halloween-orange);
+  height: 47px;
 }
 
 .btn-outline {
   background-color: var(--white);
   color: var(--halloween-orange);
   border-color: var(--halloween-orange);
+  height: 47px;
 }
 
 .btn-outline:hover {
   color: var(--white);
   background-color: var(--halloween-orange);
+  height: 47px;
 }
 
 .button-reservation {
   width: 130px;
+  height: 47px;
 }
 
 .button-mypage {
   width: 150px;
+  height: 47px;
 }
 
 .button-mypage-confirm {
@@ -36,4 +42,5 @@
   background-color: var(--white);
   border-color: var(--halloween-orange);
   color: var(--halloween-orange);
+  height: 47px;
 }

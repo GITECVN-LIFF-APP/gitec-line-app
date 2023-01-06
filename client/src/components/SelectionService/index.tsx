@@ -18,7 +18,7 @@ const SelectionService = ({ onGetNameService }: SelectionServiceProps) => {
   console.log(error);
   
 
-  if (!services) return <h1>...loading</h1>
+  if (!services) return <h1>処理中</h1>
   return (
     <></>
   )

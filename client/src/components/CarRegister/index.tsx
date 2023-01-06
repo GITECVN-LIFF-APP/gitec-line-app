@@ -16,10 +16,8 @@ const initialValues: ICar = {
   licensePlate: '',
   registrationDate: '',
   userId: '',
-  id:''
+  id: '',
 }
-
-
 
 export type IContactFormProps = {
   onSubmit: (values: ICar) => void
@@ -30,7 +28,7 @@ const CarRegister = ({ onSubmit }: IContactFormProps) => {
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
       {({ errors, handleSubmit, handleChange }) => (
         <>
-          <h2 className='fw-bold mb-5'>車種情報登録</h2>
+          <h1 className='fw-bold mb-5'>車種情報登録</h1>
           <form onSubmit={handleSubmit}>
             <div className='row mb-4'>
               <div className='col'>
@@ -60,6 +58,7 @@ const CarRegister = ({ onSubmit }: IContactFormProps) => {
                   name='licensePlate'
                   label='車のナンバー'
                   type='text'
+                  placeholder='あ 00-00'
                 />
               </div>
               <div className='col'>
@@ -72,7 +71,7 @@ const CarRegister = ({ onSubmit }: IContactFormProps) => {
                 />
               </div>
             </div>
-            {/* <p className='text-danger mb-5'>※登録内容は全て必須項目です。</p> */}
+            <p className='text-danger mb-5'>※登録内容は全て必須項目です。</p>
             {/* <Link to={'/confirm-information'}> */}
             <Button variant={VARIANTS.MAIN} children='車種情報の入力' typeButton='submit' />
             {/* </Link> */}

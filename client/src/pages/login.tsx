@@ -21,14 +21,14 @@ const initialValues: IAccount = {
 interface Profile {
   userId: string
   displayName: string
-  // pictureUrl?: string
+  pictureUrl?: string
   // statusMessage?: string
 }
 
 function Login() {
   const [listUser, setListUser] = useState([])
-  const [watting, setWatting]= useState(false)
-  
+  const [watting, setWatting] = useState(false)
+
   const navigate = useNavigate()
 
   const [message, setMessage] = useState('')
@@ -55,13 +55,17 @@ function Login() {
       if (liff.isLoggedIn()) {
         const profile = await liff.getProfile()
         setProfile(profile)
-        console.log(profile);
-        const res = await axios.get('https://sandy-halved-pleasure.glitch.me/users?lineId=' + profile.userId)
+        console.log(profile)
+        const res = await axios.get(
+          'https://sandy-halved-pleasure.glitch.me/users?lineId=' + profile.userId,
+        )
         if (res.data.length === 1) {
-                    localStorage.setItem('userSession', JSON.stringify(res.data[0]))
-                     navigate('/mypage')
-                     console.log(listUser.length)
-                   } else navigate('/update-info-member',{state:{lineId:profile.userId}})
+          console.log('bjhfbdsjhfbsdhjfbsdjh', res.data[1]);
+          
+          localStorage.setItem('userSession', JSON.stringify(res.data[0], res.data[1]))
+          navigate('/mypage')
+          console.log(listUser.length)
+        } else navigate('/update-info-member', { state: { lineId: profile.userId } })
       }
     } catch (error) {
       setMessage('LIFF init failed.')
@@ -80,26 +84,6 @@ function Login() {
   const login = () => {
     liff.login()
   }
-
-  // if (profile.userId !== undefined) {
-  //   // liff.getProfile();
-  //   liff
-  //     .getProfile()
-  //     .then((profile) => {
-  //       const userId = profile.userId
-  //        fetch(userId)
-  //        if(!watting){
-  //          if (listUser.length === 1) {
-  //            navigate('/mypage')
-  //            console.log(listUser.length)
-  //          } else navigate('/update-info-member')
-  //        }
-  //       // listUser.length === 1 ? navigate('/mypage') : navigate('/update-info-member')
-  //     })
-  //     .catch((err) => {
-  //       console.log('error', err)
-  //     })
-  // }
 
   // Validation form login
   const validateForm = (values: IAccount) => {

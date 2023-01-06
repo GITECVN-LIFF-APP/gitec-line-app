@@ -23,7 +23,7 @@ const GasStationPage = () => {
     setGasStation(gasStation)
   }
 
-  if (!gasStations) return <h1>...loading</h1>
+  if (!gasStations) return <h1>処理中</h1>
   return (
     <>
       <Header />
