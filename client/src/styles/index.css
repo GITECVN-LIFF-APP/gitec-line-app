@@ -78,3 +78,8 @@ a {
     font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1200 - 300)));
   }
 }
+
+/* required */
+.required {
+  color: red;
+}

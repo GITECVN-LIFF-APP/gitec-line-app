@@ -17,7 +17,7 @@ const Reservation = () => {
 
   return (
     <>
-      <h2 className='fw-bold mb-5'>予約完了</h2>
+      <h1 className='fw-bold mb-5'>予約完了</h1>
       <h6 className='mb-5 fs-6 fw-bolder'>ご予約ありがとうございます！</h6>
       <p className='mb-5 me-5'>
         LINEメッセージにて、ご予約内容を返信いたしました。

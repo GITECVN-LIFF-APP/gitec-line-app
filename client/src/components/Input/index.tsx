@@ -13,6 +13,7 @@ export type InputProps = {
   inputRef?: RefObject<HTMLInputElement>
   defaultValue?: string
   value?: string | number
+  required?: boolean
 }
 
 const Input = ({
@@ -26,12 +27,13 @@ const Input = ({
   inputRef,
   defaultValue,
   value,
+  required = false,
 }: InputProps): JSX.Element => {
   return (
     <div className='d-flex flex-column mt-3'>
       <div className='flex-nowrap'>
         <label htmlFor={id} className='mb-2 fw-semibold'>
-          {label}
+          {label} {required ? <span className='required'>&#42;</span> : ''}
         </label>
         <input
           defaultValue={defaultValue}

@@ -51,7 +51,7 @@ const PickDateTime = () => {
     setPickDateTime(newObject)
   }
 
-  if (!events) return <h1>処理中</h1>
+  if (!events) return <h1>処理中...</h1>
   return (
     <>
       <Header />

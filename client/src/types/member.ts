@@ -6,7 +6,7 @@ export interface IMember {
   address?: string
   phone?: string
   email?: string
-  password?:string
+  password?: string
   role?: boolean
-  pictureUrl?: string
+  avatar?: string
 }

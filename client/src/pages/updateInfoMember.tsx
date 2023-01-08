@@ -14,13 +14,11 @@ const UpdateInfoMember = () => {
 
   // get userId
   let lineId = location.state.lineId
-  let pictureUrl = location.state.pictureUrl
-
-  console.log('lineId', lineId)
-  console.log('pictureUrl', pictureUrl)
+  const data = JSON.parse(localStorage.getItem('userSession') || 'null')
+  console.log(data, 'data')
 
   const handleOnSubmitForm = async (value: IMember) => {
-    const newObejct = { ...value, lineId: lineId }
+    const newObejct = { ...value, lineId: lineId, avatar: data.img }
 
     console.log('new', newObejct)
 

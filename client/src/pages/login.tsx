@@ -10,8 +10,6 @@ import Input from '@components/Input'
 
 // Types
 import { IAccount } from 'types/account'
-import Button from '@components/Button'
-import { VARIANTS } from '@enums'
 
 const initialValues: IAccount = {
   username: '',
@@ -22,13 +20,13 @@ interface Profile {
   userId: string
   displayName: string
   pictureUrl?: string
-  // statusMessage?: string
 }
 
 function Login() {
   const [listUser, setListUser] = useState([])
   const [watting, setWatting] = useState(false)
 
+  // Using navigate switch page
   const navigate = useNavigate()
 
   const [message, setMessage] = useState('')
@@ -38,6 +36,7 @@ function Login() {
     isInAppBrowser: false,
     isLoggedIn: false,
   })
+
   const [profile, setProfile] = useState<Profile>({} as Profile)
   const [error, setError] = useState('')
 
@@ -55,16 +54,18 @@ function Login() {
       if (liff.isLoggedIn()) {
         const profile = await liff.getProfile()
         setProfile(profile)
-        console.log(profile)
         const res = await axios.get(
           'https://sandy-halved-pleasure.glitch.me/users?lineId=' + profile.userId,
         )
         if (res.data.length === 1) {
-          console.log('bjhfbdsjhfbsdhjfbsdjh', res.data[1]);
-          
-          localStorage.setItem('userSession', JSON.stringify(res.data[0], res.data[1]))
+          // Adding avate link and data user when login
+          const dataUser = { data: res.data[0], img: profile.pictureUrl }
+
+          // Set local storage in dataUser
+          localStorage.setItem('userSession', JSON.stringify(dataUser))
+
+          // Navigate my page
           navigate('/mypage')
-          console.log(listUser.length)
         } else navigate('/update-info-member', { state: { lineId: profile.userId } })
       }
     } catch (error) {

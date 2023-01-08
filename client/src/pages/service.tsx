@@ -29,7 +29,7 @@ const Service = () => {
   console.log(services)
   console.log(error)
 
-  if (!services) return <h1>処理中</h1>
+  if (!services) return <h1>処理中...</h1>
 
   return (
     <>

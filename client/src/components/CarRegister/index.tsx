@@ -38,6 +38,7 @@ const CarRegister = ({ onSubmit }: IContactFormProps) => {
                   name='carCompany'
                   label='お持ちの車種メーカー'
                   type='text'
+                  placeholder='トヨタ'
                 />
               </div>
               <div className='col'>
@@ -47,12 +48,14 @@ const CarRegister = ({ onSubmit }: IContactFormProps) => {
                   name='vehicles'
                   label='お持ちの車種名'
                   type='text'
+                  placeholder='ルーミー'
                 />
               </div>
             </div>
             <div className='row mb-5'>
               <div className='col'>
                 <Input
+                  required={true}
                   onChange={handleChange}
                   id='licensePlate'
                   name='licensePlate'

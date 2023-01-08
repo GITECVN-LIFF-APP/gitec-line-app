@@ -22,7 +22,7 @@ const ConfirmRegister = () => {
   )
     console.log(car?.[0]);
     
-  if (!car) return  <h1>処理中</h1>;
+  if (!car) return  <h1>処理中...</h1>;
   return (
     <>
       <h2 className='fw-bold mb-5'>登録内容確認</h2>

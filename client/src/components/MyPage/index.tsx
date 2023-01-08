@@ -33,8 +33,8 @@ const MyPage = () => {
     setIsMycar(!isMyCar)
   }
 
-  if (!user) return <h1>処理中</h1>
-  if (!car) return <h1>処理中</h1>
+  if (!user) return <h1>処理中...</h1>
+  if (!car) return <h1>処理中...</h1>
   const renderButton = () => {
     return (
       <>
@@ -80,14 +80,16 @@ const MyPage = () => {
             <h5 className='card-title fw-semibold'>{car[0]?.vehicles}</h5>
           </div>
         </div>
-        <div className='row mb-5'>
-          <div className='col'>
-            <h6 className='fw-semibold mb-3'>車のナンバー</h6>
-            <p>{car[0]?.licensePlate}</p>
-          </div>
-          <div className='col'>
-            <h6 className='fw-semibold mb-3'>車検満了日</h6>
-            <p>{car[0]?.registrationDate}</p>
+        <div className='container'>
+          <div className='row mb-5'>
+            <div className='col text-left'>
+              <h6 className='fw-semibold mb-3'>車のナンバー</h6>
+              <p>{car[0]?.licensePlate}</p>
+            </div>
+            <div className='col text-left'>
+              <h6 className='fw-semibold mb-3'>車検満了日</h6>
+              <p>{car[0]?.registrationDate}</p>
+            </div>
           </div>
         </div>
         <div className='container'>
@@ -123,7 +125,7 @@ const MyPage = () => {
         </div>
         <div className='row mb-5'>
           <div className='firstinfo'>
-            <img src={user.pictureUrl} />
+            <img src={user.avatar} className='rounded-circle' width='79px'/>
             <div className='profileinfo'>
               <div className='d-flex align-items-center'>
                 <h5 className='card-title fw-semibold'></h5>
